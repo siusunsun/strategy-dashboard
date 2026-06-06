@@ -39,6 +39,19 @@ export const categories: Category[] = [
     blurb: '基于价格行为、形态识别与技术指标构建的系统化交易策略。',
     strategies: [
       {
+        id: 'elliott-wave',
+        nameZh: '波浪理论动量',
+        nameEn: 'Elliott Wave Momentum',
+        description: '捕捉第三浪（主升浪）趋势动能，斐波那契精准入场；牛市进攻、熊市空仓，6 年全部正回报，最差年份仅 +0.1%。',
+        kpiLabel: '年化回报',
+        kpiValue: '16.4%',
+        subKpiLabel: '最大回撤',
+        subKpiValue: '3.8%',
+        tone: 'good',
+        pdfEn: pdf('/pdfs/technical/elliott_wave_EN.pdf'),
+        pdfZh: pdf('/pdfs/technical/elliott_wave_ZH.pdf'),
+      },
+      {
         id: 'cup-handle',
         nameZh: '杯柄形态',
         nameEn: 'Cup and Handle',
