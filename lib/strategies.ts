@@ -126,7 +126,7 @@ export const categories: Category[] = [
         id: 'whale-tracks',
         nameZh: '大户足迹',
         nameEn: 'Whale Tracks',
-        description: '读取成交量异动与主动买卖盘 (CVD) 中的大户足迹,在低流通性新币爆发前顺势介入——多由新币上市等事件驱动。放量点火,CVD 确认方向,顺势持有。覆盖 520+ 币种、两年滚动样本外验证,夏普 ~1.9,最大回撤 ~11%。',
+        description: '读取成交量异动与主动买卖盘 (CVD) 中的大户足迹,在低流通性新币爆发前顺势介入——多由新币上市等事件驱动。CVD 确认方向,顺势持有。覆盖 520+ 币种、两年滚动样本外验证,夏普 ~1.9,最大回撤 ~11%。',
         kpiLabel: '年化回报',
         kpiValue: '120%',
         subKpiLabel: '最大回撤',
