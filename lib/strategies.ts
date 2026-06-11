@@ -92,7 +92,7 @@ export const categories: Category[] = [
         id: 'alpha-ta',
         nameZh: '优选技术指标',
         nameEn: 'Alpha TA',
-        description: '多资产组合（BTC/ETH/SOL + 黄金），结合 AlgoAlpha 自适应超级趋势与 Ehler 振荡器，经 400+ 次回测、30 个市场、51 年数据验证。近 3 年最大回撤仅 3.2%。',
+        description: '多资产组合，优选技术指标，经 400+ 次回测、30 个市场、51 年数据验证。近 3 年最大回撤仅 3.2%。',
         kpiLabel: '年化回报',
         kpiValue: '12%',
         subKpiLabel: '最大回撤',
