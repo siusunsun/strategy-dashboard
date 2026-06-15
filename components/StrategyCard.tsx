@@ -56,7 +56,7 @@ export function StrategyCard({ s }: { s: Strategy }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-lg bg-accent/10 border border-accent/30 px-3 py-1.5 text-sm text-accent hover:bg-accent/20 transition-colors"
           >
-            <span>📄</span> 中文报告
+            <span>{s.pdfZhIcon || '📄'}</span> {s.pdfZhLabel || '中文报告'}
           </a>
         ) : null}
         {s.pdfEn ? (
@@ -66,7 +66,7 @@ export function StrategyCard({ s }: { s: Strategy }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-lg bg-accent2/10 border border-accent2/30 px-3 py-1.5 text-sm text-accent2 hover:bg-accent2/20 transition-colors"
           >
-            <span>📄</span> English
+            <span>{s.pdfEnIcon || '📄'}</span> {s.pdfEnLabel || 'English'}
           </a>
         ) : null}
       </div>
