@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Model 1 · BTC 波段交易模拟盘</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <!-- Breadcrumb -->
+    <a href="../" class="text-sm text-slate-400 hover:text-slate-200">← 返回策略总览</a>
+
+    <!-- Header -->
+    <header class="mt-6 mb-10">
+      <div class="flex items-baseline gap-3 flex-wrap">
+        <h1 class="text-4xl font-bold tracking-tight">Model 1</h1>
+        <span class="text-sm px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">模拟盘验证中</span>
+      </div>
+      <p class="text-slate-400 mt-2 text-sm">BTC 波段交易 · 1 BTC 标准仓位 · 最后更新 2026-06-15</p>
+    </header>
+
+    <!-- Strategy summary -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4 text-slate-200">策略简介</h2>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-6 leading-relaxed text-slate-300">
+        <p class="mb-3">
+          <span class="text-slate-100 font-medium">Model 1</span> 是一套以 Claude AI 为实时分析师的 BTC 波段交易系统。
+          通过多源信号融合 —— 市场分析视频、链上清算热力图、多空持仓比、宏观日历 —— 动态生成 5 至 15 条候选交易计划，
+          再交由本地状态机引擎执行入场、止损、分批止盈。
+        </p>
+        <p class="mb-3">
+          一年内策略架构经历了三次主要进化：
+        </p>
+        <ul class="list-disc list-inside space-y-1 text-slate-300 mb-3 pl-2">
+          <li>从纯技术指标的回测引擎 → 引入实时 AI 分析师重写每日候选计划；</li>
+          <li>从单边方向预测 → 双向 fork 布局（同价位多空双侧布单，市场选择方向）；</li>
+          <li>从固定止损百分比 → 流动性陷阱识别（避开做市商常规猎杀区，将止损置于结构层之外）。</li>
+        </ul>
+        <p>
+          目前以 <span class="font-medium text-slate-100">1 BTC 标准仓位</span> 在模拟盘实时验证策略边际，
+          数据沿用 Binance 公开行情 + Coinglass 清算图 + 多个分析师 YouTube 信号。
+        </p>
+      </div>
+    </section>
+
+    <!-- KPI Tiles -->
+    <section class="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
+        <div class="text-xs text-slate-400 mb-1">运行状态</div>
+        <div class="text-lg font-semibold text-amber-400">模拟盘运行中</div>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
+        <div class="text-xs text-slate-400 mb-1">已结算交易</div>
+        <div class="text-lg font-semibold num">3 笔</div>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
+        <div class="text-xs text-slate-400 mb-1">累计盈亏</div>
+        <div class="text-lg font-semibold text-rose-400 num">−$177.77</div>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
+        <div class="text-xs text-slate-400 mb-1">候选计划</div>
+        <div class="text-lg font-semibold num">6 条</div>
+      </div>
+    </section>
+
+    <!-- Trade History -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4 text-slate-200">📜 历史交易</h2>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-900 text-slate-400 text-left">
+            <tr>
+              <th class="px-4 py-3 font-medium">#</th>
+              <th class="px-4 py-3 font-medium">方向 · 设置</th>
+              <th class="px-4 py-3 font-medium num">入场 → 出场</th>
+              <th class="px-4 py-3 font-medium num">盈亏 (USD)</th>
+              <th class="px-4 py-3 font-medium">退出原因</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="px-4 py-3 text-slate-500 num">1</td>
+              <td class="px-4 py-3">
+                <span class="text-emerald-400">多</span> · 防守反击
+              </td>
+              <td class="px-4 py-3 num text-slate-300">$75,566 → $74,785</td>
+              <td class="px-4 py-3 num text-rose-400 font-medium">−$39.51</td>
+              <td class="px-4 py-3 text-slate-400">中途失效</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-slate-500 num">2</td>
+              <td class="px-4 py-3">
+                <span class="text-rose-400">空</span> · 67k 假反弹
+              </td>
+              <td class="px-4 py-3 num text-slate-300">$63,830 → $63,962</td>
+              <td class="px-4 py-3 num text-rose-400 font-medium">−$85.12</td>
+              <td class="px-4 py-3 text-slate-400">手动平仓</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-slate-500 num">3</td>
+              <td class="px-4 py-3">
+                <span class="text-emerald-400">多</span> · 62k 收复
+              </td>
+              <td class="px-4 py-3 num text-slate-300">$62,804 → $62,313</td>
+              <td class="px-4 py-3 num text-rose-400 font-medium">−$53.14</td>
+              <td class="px-4 py-3 text-slate-400">触发止损</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Active Plans -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4 text-slate-200">🎯 当前候选计划</h2>
+      <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-900 text-slate-400 text-left">
+            <tr>
+              <th class="px-4 py-3 font-medium">方向</th>
+              <th class="px-4 py-3 font-medium">名称</th>
+              <th class="px-4 py-3 font-medium num">入场区间</th>
+              <th class="px-4 py-3 font-medium num">止损</th>
+              <th class="px-4 py-3 font-medium">订单类型</th>
+              <th class="px-4 py-3 font-medium">评级</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
+              <td class="px-4 py-3 text-slate-200">66k 假反弹空</td>
+              <td class="px-4 py-3 num text-slate-300">$65,900 – $66,400</td>
+              <td class="px-4 py-3 num text-slate-300">$67,700</td>
+              <td class="px-4 py-3 text-slate-400">STOP @ $65,800</td>
+              <td class="px-4 py-3 text-amber-400">★★★</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
+              <td class="px-4 py-3 text-slate-200">79k 假突破空</td>
+              <td class="px-4 py-3 num text-slate-300">$78,800 – $79,700</td>
+              <td class="px-4 py-3 num text-slate-300">$81,000</td>
+              <td class="px-4 py-3 text-slate-400">LIMIT</td>
+              <td class="px-4 py-3 text-amber-400">★★★★</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
+              <td class="px-4 py-3 text-slate-200">73.5k 反弹多</td>
+              <td class="px-4 py-3 num text-slate-300">$73,300 – $73,800</td>
+              <td class="px-4 py-3 num text-slate-300">—</td>
+              <td class="px-4 py-3 text-slate-400">LIMIT</td>
+              <td class="px-4 py-3 text-amber-400">★</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
+              <td class="px-4 py-3 text-slate-200">82.5k 顶部喷射空</td>
+              <td class="px-4 py-3 num text-slate-300">$82,300 – $82,500</td>
+              <td class="px-4 py-3 num text-slate-300">$83,700</td>
+              <td class="px-4 py-3 text-slate-400">LIMIT</td>
+              <td class="px-4 py-3 text-amber-400">★★</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
+              <td class="px-4 py-3 text-slate-200">58k 深度投降多</td>
+              <td class="px-4 py-3 num text-slate-300">$57,800 – $58,400</td>
+              <td class="px-4 py-3 num text-slate-300">$56,900</td>
+              <td class="px-4 py-3 text-slate-400">LIMIT</td>
+              <td class="px-4 py-3 text-amber-400">★★★</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
+              <td class="px-4 py-3 text-slate-200">55k 深度投降多</td>
+              <td class="px-4 py-3 num text-slate-300">$55,400 – $56,000</td>
+              <td class="px-4 py-3 num text-slate-300">$54,300</td>
+              <td class="px-4 py-3 text-slate-400">STOP @ $56,100</td>
+              <td class="px-4 py-3 text-amber-400">★★★★</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+        计划评级（★）反映与当前市场结构的契合度。
+        订单类型说明：<span class="text-slate-400">LIMIT</span> = 被动挂单（价格触及区间即成交）；
+        <span class="text-slate-400">STOP</span> = 触发式挂单（价格穿越特定触发价才激活，用于反转确认）。
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 pt-6 border-t border-slate-800 text-xs text-slate-500">
+      <p>本页数据为本地模拟盘快照，非真实资金交易。如需查看实时执行日志请联系作者。</p>
+      <p class="mt-1">© 2026 量化策略仪表盘 · Model 1</p>
+    </footer>
+
+  </div>
+</body>
+</html>
