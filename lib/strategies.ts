@@ -187,6 +187,19 @@ export const categories: Category[] = [
     blurb: '利用深度学习模型挖掘非线性特征,构建预测信号。',
     strategies: [
       {
+        id: 'model-1',
+        nameZh: 'Model 1',
+        nameEn: 'Model 1',
+        description:
+          '以 Claude AI 为实时分析师的 BTC 波段交易系统。多源融合（市场分析视频、链上清算热力图、多空持仓、宏观日历）动态生成候选计划，从纯技术回测演化至 AI 辅助识别流动性陷阱与双向 fork 布局，目前以 1 BTC 标准仓位在模拟盘实时验证策略边际。',
+        kpiLabel: '运行状态',
+        kpiValue: '模拟盘运行中',
+        subKpiLabel: '候选计划',
+        subKpiValue: '6 条',
+        tone: 'neutral',
+        pdfZh: pdf('/dl/model_1.html'),
+      },
+      {
         id: 'dl-more',
         nameZh: '更多策略即将上线',
         nameEn: 'More to come',
