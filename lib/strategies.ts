@@ -15,6 +15,11 @@ export type Strategy = {
   tone?: 'good' | 'bad' | 'neutral';
   pdfEn?: string;
   pdfZh?: string;
+  /** Optional overrides for the link button labels and icons (default: "📄 中文报告" / "📄 English"). */
+  pdfZhLabel?: string;
+  pdfEnLabel?: string;
+  pdfZhIcon?: string;
+  pdfEnIcon?: string;
   /** If true, render as a placeholder "coming soon" card. */
   comingSoon?: boolean;
 };
@@ -198,6 +203,8 @@ export const categories: Category[] = [
         subKpiValue: '6 条',
         tone: 'neutral',
         pdfZh: pdf('/dl/model_1.html'),
+        pdfZhLabel: '历史交易+交易计划',
+        pdfZhIcon: '📊',
       },
       {
         id: 'dl-more',
