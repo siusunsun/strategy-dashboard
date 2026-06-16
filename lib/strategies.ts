@@ -20,6 +20,9 @@ export type Strategy = {
   pdfEnLabel?: string;
   pdfZhIcon?: string;
   pdfEnIcon?: string;
+  /** Optional link to a live/real-time trading dashboard for this strategy
+   *  (rendered as a 实时交易 button on the card). */
+  liveDashboardUrl?: string;
   /** If true, render as a placeholder "coming soon" card. */
   comingSoon?: boolean;
 };
@@ -79,6 +82,7 @@ export const categories: Category[] = [
         tone: 'good',
         pdfEn: pdf('/pdfs/technical/box_theory_EN.pdf'),
         pdfZh: pdf('/pdfs/technical/box_theory_ZH.pdf'),
+        liveDashboardUrl: 'https://siusunsun.github.io/box-dashboard/',
       },
       {
         id: 'rsi-reversal',

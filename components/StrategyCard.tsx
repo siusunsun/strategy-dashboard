@@ -69,6 +69,16 @@ export function StrategyCard({ s }: { s: Strategy }) {
             <span>{s.pdfEnIcon || '📄'}</span> {s.pdfEnLabel || 'English'}
           </a>
         ) : null}
+        {s.liveDashboardUrl ? (
+          <a
+            href={s.liveDashboardUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-good/10 border border-good/40 px-3 py-1.5 text-sm text-good hover:bg-good/20 transition-colors"
+          >
+            <span>📊</span> 实时交易
+          </a>
+        ) : null}
       </div>
     </div>
   );
