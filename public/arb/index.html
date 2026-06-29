@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨交易所资金费套利 · Cross Exchange Arb</title>
+<style>
+body{margin:0;padding:20px;background:#0d1117;min-height:100vh;font-family:-apple-system,'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+.d{background:#0d1117;color:#e6edf3;max-width:1100px;margin:0 auto;padding:14px;border-radius:12px;font-size:.65rem}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:6px}
+.hdr h1{font-size:1.1rem;font-weight:700}.hdr p{font-size:.64rem;color:#8b949e;margin-top:2px}
+.pill{display:flex;align-items:center;gap:4px;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.4);color:#3fb950;padding:3px 8px;border-radius:16px;font-size:.62rem;font-weight:600}
+.dot{width:6px;height:6px;border-radius:50%;background:#3fb950;animation:bl 2s ease-in-out infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px}
+.ki{background:#1c2128;border:1px solid #30363d;border-radius:7px;padding:6px 8px}
+.kl{font-size:.53rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em}
+.kv{font-size:1rem;font-weight:700;font-variant-numeric:tabular-nums}
+.g{color:#3fb950}.r{color:#f85149}.mu{color:#8b949e}.bl{color:#58a6ff}.w{color:#d29922}
+.pr{background:#1c2128;border:1px solid rgba(88,166,255,.2);border-radius:8px;padding:8px 12px;margin-bottom:8px;font-size:.66rem;line-height:1.5}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+.acc{background:#1c2128;border:1px solid #30363d;border-radius:8px;overflow:hidden}
+.ah{padding:5px 8px;font-size:.6rem;font-weight:600;display:flex;justify-content:space-between}
+.ah.oa{background:rgba(88,166,255,.07);border-bottom:1px solid rgba(88,166,255,.18);color:#58a6ff}
+.ah.ha{background:rgba(210,153,34,.07);border-bottom:1px solid rgba(210,153,34,.18);color:#d29922}
+.tw{max-height:370px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:.58rem}
+th{padding:3px 5px;text-align:right;color:#8b949e;font-weight:500;border-bottom:1px solid #30363d;font-size:.5rem;text-transform:uppercase;position:sticky;top:0;background:#1c2128;z-index:1}
+th:first-child,th:nth-child(2){text-align:left}
+td{padding:3px 5px;text-align:right;border-bottom:1px solid rgba(48,54,61,.3);font-variant-numeric:tabular-nums}
+td:first-child{text-align:left;font-weight:600}td:nth-child(2){text-align:left}
+.dl{color:#3fb950;font-weight:600}.ds{color:#f85149;font-weight:600}
+.af{padding:4px 8px;display:flex;justify-content:space-between;font-size:.58rem;background:#161b22;border-top:1px solid #30363d}
+.net{background:#1c2128;border:1px solid #30363d;border-radius:8px;padding:8px;margin-bottom:8px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;font-size:.6rem}
+.ni{text-align:center;min-width:58px}.ni .nl{font-size:.48rem;color:#8b949e;text-transform:uppercase}.ni .nv{font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
+.op{color:#8b949e;font-size:.9rem}
+.ft{background:linear-gradient(135deg,rgba(63,185,80,.07),rgba(88,166,255,.04));border:1px solid rgba(63,185,80,.2);border-radius:8px;padding:10px;margin-bottom:8px;text-align:center}
+.ft .fl{font-size:.53rem;text-transform:uppercase;letter-spacing:.06em;color:#8b949e;margin-bottom:3px}
+.ft .fv{font-size:1.5rem;font-weight:700;color:#3fb950;font-variant-numeric:tabular-nums}
+.ft .fs{font-size:.54rem;color:#8b949e;margin-top:3px}
+.fr{display:flex;justify-content:center;gap:18px;margin-top:6px}
+.fi{text-align:center}.fi .fl2{font-size:.48rem;color:#8b949e}.fi .fv2{font-size:.78rem;font-weight:600;font-variant-numeric:tabular-nums}
+.lb{background:#1c2128;border:1px solid #30363d;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.lh{padding:5px 8px;font-size:.56rem;font-weight:600;color:#8b949e;display:flex;justify-content:space-between;border-bottom:1px solid #30363d;text-transform:uppercase;letter-spacing:.05em}
+.lo{max-height:200px;overflow-y:auto;padding:2px 0}
+.le{display:flex;align-items:center;gap:5px;padding:2px 8px;font-size:.55rem;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(48,54,61,.2);animation:fi .35s}
+@keyframes fi{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.le .lt{color:#8b949e;min-width:52px}.le .lx{min-width:65px;font-weight:600}
+.le .lx.xo{color:#58a6ff}.le .lx.xh{color:#d29922}.le .lx.xs{color:#8b949e}
+.le .ld{flex:1;color:#8b949e}.le .la{font-weight:600;min-width:58px;text-align:right}
+.foot{text-align:center;font-size:.48rem;color:#8b949e;padding-top:5px;border-top:1px solid #30363d}
+@media(max-width:700px){.kg{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="d">
+<div class="hdr"><div><h1>🏛️ 跨交易所资金费套利</h1><p>OKX (A) × Hyperliquid (B) · Delta 中性 · 起始资金 $500,000 · 自 2026-05-01</p></div><div class="pill"><div class="dot"></div>LIVE</div></div>
+
+<div class="kg">
+<div class="ki"><div class="kl">起始资金</div><div class="kv">$500,000</div></div>
+<div class="ki"><div class="kl">累计资金费</div><div class="kv g" id="cumKpi">+$11,000</div></div>
+<div class="ki"><div class="kl">当前总权益</div><div class="kv g" id="eqKpi">$511,000</div></div>
+<div class="ki"><div class="kl">份额净值</div><div class="kv g" id="navKpi">$1.0220</div></div>
+<div class="ki"><div class="kl">30日年化</div><div class="kv g">+22.3%</div></div>
+<div class="ki"><div class="kl">预估日收益</div><div class="kv g" id="dayKpi">~$305/天</div></div>
+<div class="ki"><div class="kl">夏普比率</div><div class="kv g">11.38</div></div>
+<div class="ki"><div class="kl">最大回撤</div><div class="kv mu">−0.13%</div></div>
+</div>
+
+<div class="pr">
+<span style="color:#58a6ff;font-weight:600">⚡ 原理</span> —
+同一币种在两家交易所<b>各开反向仓位</b>，涨跌互抵 → <b style="color:#58a6ff">净敞口 ≈ 0</b>。
+每个账户<b>同时持有多空</b> → <span style="color:#3fb950">单边行情不触发清算</span>。
+利用两家<b>资金费率差</b>，收取 > 支付 → <span style="color:#3fb950">日均净赚 ~$305</span>。
+HL 每1h结算 · OKX 每8h结算。
+</div>
+
+<div class="cols">
+<div class="acc"><div class="ah oa"><span>🔵 Account A · OKX · 8h结算</span><span id="am" style="font-size:.52rem"></span></div>
+<div class="tw"><table><thead><tr><th>币种</th><th>方向</th><th>$k</th><th>浮盈亏</th><th>资金费/8h</th></tr></thead><tbody id="ta"></tbody></table></div>
+<div class="af"><span id="an"></span><span id="af1"></span></div></div>
+
+<div class="acc"><div class="ah ha"><span>🟡 Account B · Hyperliquid · 1h结算</span><span id="bm" style="font-size:.52rem"></span></div>
+<div class="tw"><table><thead><tr><th>币种</th><th>方向</th><th>$k</th><th>浮盈亏</th><th>资金费/1h</th></tr></thead><tbody id="tb"></tbody></table></div>
+<div class="af"><span id="bn"></span><span id="bf1"></span></div></div>
+</div>
+
+<div class="net">
+<div class="ni"><div class="nl">A 浮盈</div><div class="nv" id="apnl">-</div></div>
+<div class="op">+</div>
+<div class="ni"><div class="nl">B 浮盈</div><div class="nv" id="bpnl">-</div></div>
+<div class="op">=</div>
+<div class="ni"><div class="nl">净价格盈亏</div><div class="nv bl" id="npnl">≈$0</div></div>
+<div style="border-left:1px solid #30363d;height:22px"></div>
+<div class="ni"><div class="nl">A 净敞口</div><div class="nv bl" id="ae">-</div></div>
+<div class="ni"><div class="nl">B 净敞口</div><div class="nv w" id="be">-</div></div>
+<div class="op">=</div>
+<div class="ni"><div class="nl">组合净敞口</div><div class="nv bl" id="te">≈$0</div></div>
+</div>
+
+<div class="ft">
+<div class="fl">今日已结算资金费（模拟加速 · 4秒 = 1小时）</div>
+<div class="fv" id="todayF">$0.00</div>
+<div class="fs">仅在结算时刻跳增 · 不会逐秒递增</div>
+<div class="fr">
+<div class="fi"><div class="fl2">OKX 今日结算</div><div class="fv2 bl" id="oD">$0.00</div></div>
+<div class="fi"><div class="fl2">HL 今日结算</div><div class="fv2 w" id="hD">$0.00</div></div>
+<div class="fi"><div class="fl2">今日净收益</div><div class="fv2 g" id="nD">$0.00</div></div>
+</div>
+</div>
+
+<div class="lb"><div class="lh"><span>📋 结算记录</span><span id="clk">模拟中...</span></div><div class="lo" id="logD"></div></div>
+<div class="foot">持仓为示意 · 币种来源 Loris Funding Arb Screener (2026-06-29) · 总收益/权益数据来自实盘（规模对应$500k起始）· 22.3% APR × $500k ÷ 365 ≈ $305/天</div>
+</div>
+
+<script>
+const P=[
+{s:'IP',n:15,hd:'l',d:92,hs:1.08,v:.006},
+{s:'ANIME',n:15,hd:'l',d:50,hs:1.10,v:.005},
+{s:'ALGO',n:15,hd:'l',d:22,hs:1.05,v:.002},
+{s:'CELO',n:17,hd:'s',d:19,hs:0.60,v:.003},
+{s:'CHIP',n:15,hd:'s',d:14,hs:0.70,v:.004},
+{s:'STABLE',n:12,hd:'l',d:13,hs:1.15,v:.001},
+{s:'NATGAS',n:15,hd:'s',d:12,hs:0.55,v:.004},
+{s:'LAYER',n:15,hd:'l',d:12,hs:1.08,v:.003},
+{s:'ZETA',n:12,hd:'l',d:10,hs:0.90,v:.003},
+{s:'PEPE',n:15,hd:'l',d:10,hs:1.05,v:.004},
+{s:'2Z',n:12,hd:'l',d:8,hs:0.85,v:.005},
+{s:'JUP',n:15,hd:'s',d:8,hs:0.65,v:.003},
+{s:'GMT',n:15,hd:'s',d:9,hs:0.50,v:.003},
+{s:'APE',n:15,hd:'s',d:7,hs:0.70,v:.003},
+{s:'RENDER',n:15,hd:'s',d:7,hs:0.65,v:.002},
+{s:'BONK',n:15,hd:'s',d:6,hs:0.70,v:.004},
+{s:'SHIB',n:12,hd:'l',d:6,hs:1.10,v:.003}
+];
+
+const mults=P.map(()=>1.0);
+const $=id=>document.getElementById(id);
+const fm=(n,d)=>n.toLocaleString('en-US',{minimumFractionDigits:d??2,maximumFractionDigits:d??2});
+
+let hlTot=0,okxTot=0;
+P.forEach(p=>{
+  p.hlF=p.d*p.hs/24;
+  p.okF=p.d*(1-p.hs)/3;
+  hlTot+=p.hlF;
+  okxTot+=p.okF;
+});
+const dailyEst=Math.round(hlTot*24+okxTot*3);
+$('dayKpi').textContent='~$'+dailyEst+'/天';
+
+function render(){
+  let aPnl=0,bPnl=0,aL=0,aS=0,bL=0,bS=0;
+  let aH='',bH='',aFt=0,bFt=0;
+  P.forEach((p,i)=>{
+    const m=mults[i],N=p.n*1000,od=p.hd==='l'?'s':'l';
+    const oP=od==='l'?N*(m-1):N*(1-m);
+    aFt+=p.okF; aPnl+=oP;
+    if(od==='l')aL+=N*m;else aS+=N*m;
+    const odc=od==='l'?'dl':'ds',odl=od==='l'?'多':'空';
+    const opc=oP>=0?'#3fb950':'#f85149',ofc=p.okF>=0?'#3fb950':'#f85149';
+    aH+=`<tr><td>${p.s}</td><td><span class="${odc}">${odl}</span></td><td>${p.n}</td><td style="color:${opc}">${oP>=0?'+':'-'}$${fm(Math.abs(oP),0)}</td><td style="color:${ofc}">${p.okF>=0?'+':'-'}$${fm(Math.abs(p.okF),2)}</td></tr>`;
+    const hP=p.hd==='l'?N*(m-1):N*(1-m);
+    bFt+=p.hlF; bPnl+=hP;
+    if(p.hd==='l')bL+=N*m;else bS+=N*m;
+    const hdc=p.hd==='l'?'dl':'ds',hdl=p.hd==='l'?'多':'空';
+    const hpc=hP>=0?'#3fb950':'#f85149';
+    bH+=`<tr><td>${p.s}</td><td><span class="${hdc}">${hdl}</span></td><td>${p.n}</td><td style="color:${hpc}">${hP>=0?'+':'-'}$${fm(Math.abs(hP),0)}</td><td style="color:#3fb950">+$${fm(p.hlF,2)}</td></tr>`;
+  });
+  $('ta').innerHTML=aH; $('tb').innerHTML=bH;
+  $('am').textContent='多$'+fm(aL/1000,0)+'k · 空$'+fm(aS/1000,0)+'k';
+  $('bm').textContent='多$'+fm(bL/1000,0)+'k · 空$'+fm(bS/1000,0)+'k';
+  const aN=aL-aS,bN=bL-bS;
+  $('an').innerHTML='净敞口: <b style="color:#58a6ff">$'+fm(Math.abs(aN)/1000,1)+'k '+(aN>=0?'偏多':'偏空')+'</b>';
+  $('bn').innerHTML='净敞口: <b style="color:#d29922">$'+fm(Math.abs(bN)/1000,1)+'k '+(bN>=0?'偏多':'偏空')+'</b>';
+  $('af1').innerHTML='OKX 每次结算(8h): <b style="color:'+(aFt>=0?'#3fb950':'#f85149')+'">'+(aFt>=0?'+':'-')+'$'+fm(Math.abs(aFt),2)+'</b>';
+  $('bf1').innerHTML='HL 每次结算(1h): <b style="color:#3fb950">+$'+fm(bFt,2)+'</b>';
+  const c=n=>n>=0?'#3fb950':'#f85149';
+  $('apnl').textContent=(aPnl>=0?'+':'-')+'$'+fm(Math.abs(aPnl),0);$('apnl').style.color=c(aPnl);
+  $('bpnl').textContent=(bPnl>=0?'+':'-')+'$'+fm(Math.abs(bPnl),0);$('bpnl').style.color=c(bPnl);
+  $('npnl').textContent='≈ $'+fm(Math.abs(aPnl+bPnl),0);
+  $('ae').textContent='$'+fm(Math.abs(aN)/1000,1)+'k';
+  $('be').textContent='$'+fm(Math.abs(bN)/1000,1)+'k';
+  $('te').textContent='≈ $'+fm(Math.abs(aN+bN)/1000,1)+'k';
+}
+
+const START_CUM=11000,START_EQ=500000;
+let simH=0,tOkx=0,tHl=0,cumF=START_CUM;
+const logs=[];
+function addLog(t,ex,amt,det){
+  logs.unshift({t,ex,amt,det});
+  if(logs.length>30)logs.pop();
+  $('logD').innerHTML=logs.map(e=>{
+    const col=e.amt===null?'#8b949e':e.amt>=0?'#3fb950':'#f85149';
+    const xc=e.ex==='OKX'?'xo':e.ex==='HL'?'xh':'xs';
+    const a=e.amt===null?'':(e.amt>=0?'+':'-')+' $'+fm(Math.abs(e.amt),2);
+    return`<div class="le"><span class="lt">${e.t}</span><span class="lx ${xc}">${e.ex}</span><span class="ld">${e.det}</span><span class="la" style="color:${col}">${a}</span></div>`;
+  }).join('');
+}
+function fH(h){return String(h%24).padStart(2,'0')+':00 UTC';}
+function updKpis(){
+  const eq=START_EQ+cumF;
+  $('cumKpi').textContent='+$'+fm(cumF,0);
+  $('eqKpi').textContent='$'+fm(eq,0);
+  $('navKpi').textContent='$'+(eq/START_EQ).toFixed(4);
+}
+
+function settle(){
+  simH++;
+  const t=fH(simH);
+  $('clk').textContent='模拟 '+t+' · Day '+(Math.floor(simH/24)+1);
+  tHl+=hlTot; cumF+=hlTot;
+  addLog(t,'HL',hlTot,'17 仓位 · 每小时结算');
+  if(simH%8===0){
+    tOkx+=okxTot; cumF+=okxTot;
+    addLog(t,'OKX',okxTot,'17 仓位 · 每8小时结算');
+  }
+  if(simH%24===0){
+    addLog(fH(0),'───',null,'══════ 新的一天 ══════');
+    tOkx=0;tHl=0;
+  }
+  const tNet=tOkx+tHl;
+  $('todayF').textContent='$'+fm(tNet,2);
+  $('oD').textContent=(tOkx>=0?'+':'-')+'$'+fm(Math.abs(tOkx),2);
+  $('oD').style.color=tOkx>=0?'#3fb950':'#f85149';
+  $('hD').textContent='+$'+fm(tHl,2);
+  $('nD').textContent='+$'+fm(tNet,2);
+  updKpis();
+}
+
+function wiggle(){
+  P.forEach((p,i)=>{mults[i]*=1+(Math.random()-.499)*p.v*2;});
+  render();
+}
+
+render(); updKpis();
+setTimeout(wiggle,500);
+setInterval(wiggle,2000);
+setTimeout(settle,2200);
+setInterval(settle,4000);
+</script>
+</body>
+</html>
