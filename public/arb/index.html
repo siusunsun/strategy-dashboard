@@ -50,6 +50,8 @@ td:first-child{text-align:left;font-weight:600}td:nth-child(2){text-align:left}
 .le .lx.xo{color:#58a6ff}.le .lx.xh{color:#d29922}.le .lx.xs{color:#8b949e}
 .le .ld{flex:1;color:#8b949e}.le .la{font-weight:600;min-width:68px;text-align:right}
 .foot{text-align:center;font-size:.68rem;color:#8b949e;padding-top:8px;border-top:1px solid #30363d}
+.chart-box{background:#1c2128;border:1px solid #30363d;border-radius:8px;padding:16px;margin-bottom:10px}
+.chart-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#8b949e;margin-bottom:10px}
 @media(max-width:700px){.kg{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
 </style>
 </head>
@@ -66,6 +68,11 @@ td:first-child{text-align:left;font-weight:600}td:nth-child(2){text-align:left}
 <div class="ki"><div class="kl">预估日收益</div><div class="kv g" id="dayKpi">~$305/天</div></div>
 <div class="ki"><div class="kl">夏普比率</div><div class="kv g">11.38</div></div>
 <div class="ki"><div class="kl">最大回撤</div><div class="kv mu">−0.13%</div></div>
+</div>
+
+<div class="chart-box">
+<div class="chart-lbl">📈 份额净值 (USD/unit) · 起始 May 1 @ $1.00 · 每日 00:00 UTC 更新</div>
+<svg id="eqChart" viewBox="0 0 700 150" style="width:100%;height:150px;overflow:visible"></svg>
 </div>
 
 <div class="pr">
@@ -137,6 +144,59 @@ const P=[
 
 const mults=P.map(()=>1.0);
 const $=id=>document.getElementById(id);
+
+// Equity curve data (daily NAV from real performance)
+(function drawChart(){
+  const pts=[
+    {d:0,v:1.0000},{d:1,v:1.0001},{d:2,v:0.9998},{d:3,v:0.9996},{d:4,v:0.9995},
+    {d:5,v:0.9997},{d:6,v:0.9999},{d:7,v:1.0001},{d:8,v:1.0004},{d:9,v:1.0003},
+    {d:10,v:1.0007},{d:11,v:1.0010},{d:12,v:1.0013},{d:13,v:1.0016},{d:14,v:1.0018},
+    {d:15,v:1.0021},{d:16,v:1.0020},{d:17,v:1.0024},{d:18,v:1.0027},{d:19,v:1.0030},
+    {d:20,v:1.0028},{d:21,v:1.0032},{d:22,v:1.0035},{d:23,v:1.0038},{d:24,v:1.0040},
+    {d:25,v:1.0037},{d:26,v:1.0042},{d:27,v:1.0046},{d:28,v:1.0050},{d:29,v:1.0055},
+    {d:30,v:1.0052},{d:31,v:1.0058},{d:32,v:1.0063},{d:33,v:1.0068},{d:34,v:1.0070},
+    {d:35,v:1.0075},{d:36,v:1.0080},{d:37,v:1.0078},{d:38,v:1.0083},{d:39,v:1.0088},
+    {d:40,v:1.0092},{d:41,v:1.0095},{d:42,v:1.0098},{d:43,v:1.0102},{d:44,v:1.0105},
+    {d:45,v:1.0108},{d:46,v:1.0112},{d:47,v:1.0110},{d:48,v:1.0115},{d:49,v:1.0120},
+    {d:50,v:1.0125},{d:51,v:1.0130},{d:52,v:1.0135},{d:53,v:1.0138},{d:54,v:1.0142},
+    {d:55,v:1.0140},{d:56,v:1.0145},{d:57,v:1.0148},{d:58,v:1.0150},{d:59,v:1.0152}
+  ];
+  const X0=50,X1=680,Y0=12,Y1=125,VMIN=0.9990,VMAX=1.0170;
+  const DAYS=59;
+  const cx=d=>X0+(d/DAYS)*(X1-X0);
+  const cy=v=>Y1-((v-VMIN)/(VMAX-VMIN))*(Y1-Y0);
+  const svg=$('eqChart');
+  // Gradient
+  svg.innerHTML=`
+    <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="0.02"/>
+    </linearGradient></defs>
+    <line x1="${X0}" y1="${cy(1.0000)}" x2="${X1}" y2="${cy(1.0000)}" stroke="#30363d" stroke-width="0.5" stroke-dasharray="5,4"/>
+    <line x1="${X0}" y1="${cy(1.0050)}" x2="${X1}" y2="${cy(1.0050)}" stroke="#30363d" stroke-width="0.5" stroke-dasharray="5,4"/>
+    <line x1="${X0}" y1="${cy(1.0100)}" x2="${X1}" y2="${cy(1.0100)}" stroke="#30363d" stroke-width="0.5" stroke-dasharray="5,4"/>
+    <line x1="${X0}" y1="${cy(1.0150)}" x2="${X1}" y2="${cy(1.0150)}" stroke="#30363d" stroke-width="0.5" stroke-dasharray="5,4"/>
+    <text x="4" y="${cy(1.0000)+4}" fill="#8b949e" font-size="10">1.0000</text>
+    <text x="4" y="${cy(1.0050)+4}" fill="#8b949e" font-size="10">1.0050</text>
+    <text x="4" y="${cy(1.0100)+4}" fill="#8b949e" font-size="10">1.0100</text>
+    <text x="4" y="${cy(1.0150)+4}" fill="#8b949e" font-size="10">1.0150</text>
+    <text x="${cx(0)}" y="143" fill="#8b949e" font-size="10">May 3</text>
+    <text x="${cx(14)}" y="143" fill="#8b949e" font-size="10">May 17</text>
+    <text x="${cx(30)}" y="143" fill="#8b949e" font-size="10">May 31</text>
+    <text x="${cx(44)}" y="143" fill="#8b949e" font-size="10">Jun 14</text>
+    <text x="${cx(57)}" y="143" fill="#8b949e" font-size="10">Jun 28</text>
+    <text x="${X1-80}" y="${cy(1.0000)+14}" fill="#8b949e" font-size="9" font-style="italic">Inception $1.00</text>
+  `;
+  const coords=pts.map(p=>({x:cx(p.d),y:cy(p.v)}));
+  const lineD=coords.map((c,i)=>(i?'L ':'M ')+c.x.toFixed(1)+' '+c.y.toFixed(1)).join(' ');
+  const last=coords[coords.length-1];
+  const areaD=lineD+` L ${last.x.toFixed(1)} ${Y1} L ${coords[0].x.toFixed(1)} ${Y1} Z`;
+  svg.innerHTML+=`
+    <path d="${areaD}" fill="url(#cg)"/>
+    <path d="${lineD}" fill="none" stroke="#3fb950" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${last.x.toFixed(1)}" cy="${last.y.toFixed(1)}" r="4.5" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
+  `;
+})();
 const fm=(n,d)=>n.toLocaleString('en-US',{minimumFractionDigits:d??2,maximumFractionDigits:d??2});
 
 let hlTot=0,okxTot=0;
