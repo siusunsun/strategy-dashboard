@@ -73,18 +73,6 @@ export const categories: Category[] = [
         pdfZh: pdf('/pdfs/technical/cup_handle_ZH.pdf'),
       },
       {
-        id: 'box-theory',
-        nameZh: '箱体突破',
-        nameEn: 'Box Theory',
-        description: '小亏大赢,捕捉横盘整理后的突破机会。',
-        kpiLabel: '年化回报',
-        kpiValue: '22%',
-        tone: 'good',
-        pdfEn: pdf('/pdfs/technical/box_theory_EN.pdf'),
-        pdfZh: pdf('/pdfs/technical/box_theory_ZH.pdf'),
-        liveDashboardUrl: 'https://siusunsun.github.io/box-dashboard/',
-      },
-      {
         id: 'alpha-ta',
         nameZh: '优选技术指标',
         nameEn: 'Alpha TA',
