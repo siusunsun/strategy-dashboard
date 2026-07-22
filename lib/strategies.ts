@@ -50,7 +50,7 @@ export const categories: Category[] = [
         id: 'alpha-ta',
         nameZh: '三策略组合',
         nameEn: 'Alpha TA 3-Strategy',
-        description: '前推验证组合：ATA 40% + 杯柄形态 35% + 均值回归 25%。30 币种杯柄 + 10 币种均值回归 + 6 个 ATA 子策略，策略间相关性 < 0.08。已部署 Hyperliquid，4 倍杠杆。',
+        description: '多种技术分析策略的组合，涵盖技术指标、动量指标与图表形态。',
         kpiLabel: '6 年累计回报',
         kpiValue: '+51.3%',
         subKpiLabel: '最大回撤',
