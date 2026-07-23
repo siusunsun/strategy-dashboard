@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T09:23:09.312077+00:00",
+  "updated": "2026-07-23T09:57:27.288132+00:00",
   "updated_display": "2026-07-23",
   "summary": {
     "cumulative_pnl": 2524,
@@ -13,122 +13,72 @@
     "framework_win_rate": 57,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
-    "active_plans_count": 7,
-    "armed_plans_count": 0
+    "active_plans_count": 4,
+    "armed_plans_count": 1
   },
   "active_plans": [
     {
-      "codename": "Deep Cap Long 55K",
+      "codename": "RONALDINHO",
       "direction": "long",
       "entry_zone": [
-        55400,
-        56000
+        65550,
+        65750
       ],
-      "sl": 54300,
+      "sl": 64300,
       "tps": [
-        58000,
-        60500,
-        63900
+        66040,
+        66614,
+        66886
       ],
-      "stars": 4,
-      "status": "pending"
+      "stars": 5,
+      "status": "filled"
     },
     {
-      "codename": "AGUERO",
-      "direction": "long",
-      "entry_zone": [
-        61950,
-        62400
-      ],
-      "sl": 61350,
-      "tps": [
-        63300,
-        63880,
-        64650
-      ],
-      "stars": 4,
-      "status": "pending"
-    },
-    {
-      "codename": "B Failed Short 79K",
+      "codename": "INZAGHI",
       "direction": "short",
       "entry_zone": [
-        78800,
-        79700
+        66886,
+        67200
       ],
-      "sl": 81000,
+      "sl": 68200,
       "tps": [
-        76500,
-        74500,
-        73000,
-        71000
+        65800,
+        65000,
+        64300
       ],
       "stars": 4,
       "status": "pending"
     },
     {
-      "codename": "Deep Cap Long 58K",
+      "codename": "ETOO",
       "direction": "long",
       "entry_zone": [
-        57800,
-        58400
+        57000,
+        57400
       ],
-      "sl": 56900,
+      "sl": 53400,
       "tps": [
-        60500,
-        62000,
-        63900
+        59000,
+        60422,
+        62200
       ],
       "stars": 3,
       "status": "pending"
     },
     {
-      "codename": "SUAREZ",
+      "codename": "BERGKAMP",
       "direction": "long",
       "entry_zone": [
+        61200,
+        61500
+      ],
+      "sl": 59400,
+      "tps": [
         62400,
-        62900
-      ],
-      "sl": 61700,
-      "tps": [
-        63850,
-        64280,
-        65000
+        62994,
+        63200
       ],
       "stars": 3,
-      "status": "pending"
-    },
-    {
-      "codename": "DROGBA",
-      "direction": "short",
-      "entry_zone": [
-        65950,
-        66400
-      ],
-      "sl": 63700,
-      "tps": [
-        63400,
-        62500,
-        60700
-      ],
-      "stars": 3,
-      "status": "pending"
-    },
-    {
-      "codename": "F Blowoff Short 82.5K",
-      "direction": "short",
-      "entry_zone": [
-        82300,
-        82500
-      ],
-      "sl": 83700,
-      "tps": [
-        80500,
-        78500,
-        76000,
-        74200
-      ],
-      "stars": 2,
       "status": "pending"
     }
   ],
