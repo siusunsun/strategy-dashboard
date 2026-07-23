@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T08:00:00Z",
+  "updated": "2026-07-23T08:53:05.566761+00:00",
   "updated_display": "2026-07-23",
   "summary": {
     "cumulative_pnl": 2524,
@@ -12,58 +12,170 @@
     "framework_losses": 3,
     "framework_win_rate": 57,
     "best_trade_pnl": 2827,
-    "best_trade_name": "DROGBA 做空 66k",
-    "active_plans_count": 4,
-    "armed_plans_count": 1
+    "best_trade_name": "DROGBA 做空",
+    "active_plans_count": 3,
+    "armed_plans_count": 0
   },
   "active_plans": [
     {
-      "codename": "TREZEGUET",
-      "direction": "long",
-      "entry_zone": [65000, 65153],
-      "sl": 63600,
-      "tps": [66040, 66641, 66886],
-      "stars": 4,
-      "status": "limit_placed"
-    },
-    {
       "codename": "INZAGHI",
       "direction": "short",
-      "entry_zone": [66886, 67200],
+      "entry_zone": [
+        66886,
+        67200
+      ],
       "sl": 68200,
-      "tps": [65800, 65000, 64300],
+      "tps": [
+        65800,
+        65000,
+        64300
+      ],
       "stars": 4,
-      "status": "pending"
-    },
-    {
-      "codename": "BERGKAMP",
-      "direction": "long",
-      "entry_zone": [61200, 61500],
-      "sl": 59400,
-      "tps": [62400, 62994, 63200],
-      "stars": 3,
       "status": "pending"
     },
     {
       "codename": "ETOO",
       "direction": "long",
-      "entry_zone": [57000, 57400],
+      "entry_zone": [
+        57000,
+        57400
+      ],
       "sl": 53400,
-      "tps": [59000, 60422, 62200],
+      "tps": [
+        59000,
+        60422,
+        62200
+      ],
+      "stars": 3,
+      "status": "pending"
+    },
+    {
+      "codename": "BERGKAMP",
+      "direction": "long",
+      "entry_zone": [
+        61200,
+        61500
+      ],
+      "sl": 59400,
+      "tps": [
+        62400,
+        62994,
+        63200
+      ],
       "stars": 3,
       "status": "pending"
     }
   ],
   "trades": [
-    {"num": 1, "codename": "Defense Long", "direction": "long", "entry": 75566, "exit": 74785, "pnl": -40, "exit_reason": "中途失效", "date": "5月27日", "calibration": true},
-    {"num": 2, "codename": "Failed Bounce", "direction": "short", "entry": 63830, "exit": 63962, "pnl": -85, "exit_reason": "手动平仓", "date": "6月4日", "calibration": true},
-    {"num": 3, "codename": "Reclaim 62k", "direction": "long", "entry": 62804, "exit": 62313, "pnl": -53, "exit_reason": "触发止损", "date": "6月9日", "calibration": true},
-    {"num": 4, "codename": "DROGBA", "direction": "short", "entry": 65980, "exit": 63724, "pnl": 2827, "exit_reason": "全部止盈", "date": "6月20日", "calibration": false},
-    {"num": 5, "codename": "BENZEMA", "direction": "short", "entry": 63699, "exit": 64720, "pnl": -1021, "exit_reason": "触发止损", "date": "6月22日", "calibration": false},
-    {"num": 6, "codename": "DROGBA", "direction": "long", "entry": 60445, "exit": 58749, "pnl": -1695, "exit_reason": "触发止损", "date": "6月30日", "calibration": false},
-    {"num": 7, "codename": "AGUERO", "direction": "long", "entry": 60979, "exit": 63900, "pnl": 1556, "exit_reason": "全部止盈", "date": "7月5日", "calibration": false},
-    {"num": 8, "codename": "MBAPPE", "direction": "short", "entry": 63915, "exit": 64114, "pnl": 401, "exit_reason": "TP1 止盈后触发止损", "date": "7月10日", "calibration": false},
-    {"num": 9, "codename": "GRIEZMANN", "direction": "short", "entry": 63080, "exit": 64362, "pnl": -1282, "exit_reason": "主动平仓 (论点失效)", "date": "7月10日", "calibration": false},
-    {"num": 10, "codename": "HENRY", "direction": "long", "entry": 63689, "exit": 66659, "pnl": 1916, "exit_reason": "全部止盈", "date": "7月21日", "calibration": false}
+    {
+      "num": 1,
+      "codename": "Defense Long",
+      "direction": "long",
+      "entry": 75566,
+      "exit": 74785,
+      "pnl": -40,
+      "exit_reason": "中途失效",
+      "date": "5月27日",
+      "calibration": true
+    },
+    {
+      "num": 2,
+      "codename": "Failed Bounce",
+      "direction": "short",
+      "entry": 63830,
+      "exit": 63962,
+      "pnl": -85,
+      "exit_reason": "手动平仓",
+      "date": "6月4日",
+      "calibration": true
+    },
+    {
+      "num": 3,
+      "codename": "Reclaim 62k",
+      "direction": "long",
+      "entry": 62804,
+      "exit": 62313,
+      "pnl": -53,
+      "exit_reason": "触发止损",
+      "date": "6月9日",
+      "calibration": true
+    },
+    {
+      "num": 4,
+      "codename": "DROGBA",
+      "direction": "short",
+      "entry": 65980,
+      "exit": 63724,
+      "pnl": 2827,
+      "exit_reason": "TP1 止盈后触发止损",
+      "date": "6月20日",
+      "calibration": false
+    },
+    {
+      "num": 5,
+      "codename": "BENZEMA",
+      "direction": "short",
+      "entry": 63699,
+      "exit": 64720,
+      "pnl": -1021,
+      "exit_reason": "触发止损",
+      "date": "6月22日",
+      "calibration": false
+    },
+    {
+      "num": 6,
+      "codename": "DROGBA",
+      "direction": "long",
+      "entry": 60444,
+      "exit": 58749,
+      "pnl": -1695,
+      "exit_reason": "触发止损",
+      "date": "6月30日",
+      "calibration": false
+    },
+    {
+      "num": 7,
+      "codename": "AGUERO",
+      "direction": "long",
+      "entry": 60979,
+      "exit": 63900,
+      "pnl": 1556,
+      "exit_reason": "all TPs filled (retroactive — main loop NameError dropped the close event)",
+      "date": "7月5日",
+      "calibration": false
+    },
+    {
+      "num": 8,
+      "codename": "MBAPPE",
+      "direction": "short",
+      "entry": 63915,
+      "exit": 64114,
+      "pnl": 401,
+      "exit_reason": "TP1 止盈后触发止损",
+      "date": "7月10日",
+      "calibration": false
+    },
+    {
+      "num": 9,
+      "codename": "GRIEZMANN",
+      "direction": "short",
+      "entry": 63080,
+      "exit": 64362,
+      "pnl": -1282,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月10日",
+      "calibration": false
+    },
+    {
+      "num": 10,
+      "codename": "HENRY",
+      "direction": "long",
+      "entry": 63689,
+      "exit": 66659,
+      "pnl": 1916,
+      "exit_reason": "全部止盈",
+      "date": "7月21日",
+      "calibration": false
+    }
   ]
 }
