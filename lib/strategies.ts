@@ -101,7 +101,7 @@ export const categories: Category[] = [
         id: 'btc-deribit',
         nameZh: 'BTC Deribit 期权',
         nameEn: 'BTC Deribit Options',
-        description: '在 Deribit 平台系统化卖出 BTC 期权, 以 BTC 积累为目标。5 年累计回报 +350% (BTC), 含币价升值 USD 回报 +447%, 最大回撤仅 8%。',
+        description: '系统化卖出 BTC 期权, 以 BTC 积累为目标。最大回撤仅 8%。',
         kpiLabel: '5 年累计 (BTC)',
         kpiValue: '+350%',
         subKpiLabel: 'USD 含币价',
