@@ -11,249 +11,161 @@
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen">
-  <div class="max-w-5xl mx-auto px-6 py-12">
-
-    <!-- Breadcrumb -->
-    <a href="../" class="text-sm text-slate-400 hover:text-slate-200">&larr; 返回策略总览</a>
-
-    <!-- Header -->
-    <header class="mt-6 mb-10">
-      <div class="flex items-baseline gap-3 flex-wrap">
-        <h1 class="text-4xl font-bold tracking-tight">Model 1</h1>
-        <span class="text-sm px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">模拟盘验证中</span>
-      </div>
-      <p class="text-slate-400 mt-2 text-sm">BTC 波段交易 &middot; 每笔 1 BTC 标准仓位 &middot; 最后更新 2026-07-23</p>
-    </header>
-
-    <!-- Strategy Description -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-slate-200">策略简介</h2>
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-6 leading-relaxed text-slate-300">
-        <p class="mb-3">
-          <span class="text-slate-100 font-medium">Model 1</span> 是一个深度学习驱动的 BTC 波段交易机器人,通过持续消化多种数据源进行自主学习:
-        </p>
-        <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3 pl-2">
-          <li><span class="text-slate-100">技术分析视频</span> &mdash; 自动转录 YouTube 分析师视频,提取关键交易信号</li>
-          <li><span class="text-slate-100">交易所实时数据</span> &mdash; 价格、订单簿深度、持仓量、资金费率、清算热力图</li>
-          <li><span class="text-slate-100">图表形态识别</span> &mdash; 支撑/阻力位、假突破、散度信号、市场结构判定</li>
-          <li><span class="text-slate-100">历史交易数据库</span> &mdash; 保存每笔交易的决策依据、结果与退出原因,供系统复盘</li>
-        </ul>
-        <p>
-          系统会回顾过去的交易记录,分析亏损原因,并持续优化决策模型。
-          这是一个不断进化的过程 &mdash; 随着交易经验的积累,系统会变得越来越智能。
-          目前以 <span class="font-medium text-slate-100">1 BTC</span> 标准仓位在 VPS 上 24/7 全自主模拟盘运行。
-        </p>
-      </div>
-    </section>
-
-    <!-- KPI Tiles -->
-    <section class="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
-        <div class="text-xs text-slate-400 mb-1">累计盈亏</div>
-        <div class="text-lg font-semibold text-emerald-400 num">+$2,524</div>
-        <div class="text-xs text-slate-500 mt-0.5">共 10 笔交易</div>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
-        <div class="text-xs text-slate-400 mb-1">框架成熟期</div>
-        <div class="text-lg font-semibold text-emerald-400 num">+$2,702</div>
-        <div class="text-xs text-slate-500 mt-0.5">7 笔 &middot; 胜率 57%</div>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
-        <div class="text-xs text-slate-400 mb-1">最佳单笔</div>
-        <div class="text-lg font-semibold text-emerald-400 num">+$2,827</div>
-        <div class="text-xs text-slate-500 mt-0.5">DROGBA 做空 66k</div>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">
-        <div class="text-xs text-slate-400 mb-1">当前候选计划</div>
-        <div class="text-lg font-semibold num">4 条</div>
-        <div class="text-xs text-slate-500 mt-0.5">1 条已挂单</div>
-      </div>
-    </section>
-
-    <!-- Active Plans -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-slate-200">当前候选计划</h2>
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead class="bg-slate-900 text-slate-400 text-left">
-            <tr>
-              <th class="px-4 py-3 font-medium">代号</th>
-              <th class="px-4 py-3 font-medium">方向</th>
-              <th class="px-4 py-3 font-medium num">入场区间</th>
-              <th class="px-4 py-3 font-medium num">止损</th>
-              <th class="px-4 py-3 font-medium num">止盈目标</th>
-              <th class="px-4 py-3 font-medium">评级</th>
-              <th class="px-4 py-3 font-medium">状态</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-800">
-            <tr>
-              <td class="px-4 py-3 text-slate-200 font-medium">TREZEGUET</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$65,000 &ndash; $65,153</td>
-              <td class="px-4 py-3 num text-slate-300">$63,600</td>
-              <td class="px-4 py-3 num text-slate-300 text-xs">$66,040 / $66,641 / $66,886</td>
-              <td class="px-4 py-3 text-amber-400">&#9733;&#9733;&#9733;&#9733;</td>
-              <td class="px-4 py-3"><span class="text-xs px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">已挂单</span></td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-200 font-medium">INZAGHI</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$66,886 &ndash; $67,200</td>
-              <td class="px-4 py-3 num text-slate-300">$68,200</td>
-              <td class="px-4 py-3 num text-slate-300 text-xs">$65,800 / $65,000 / $64,300</td>
-              <td class="px-4 py-3 text-amber-400">&#9733;&#9733;&#9733;&#9733;</td>
-              <td class="px-4 py-3 text-slate-400 text-xs">等待中</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-200 font-medium">BERGKAMP</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$61,200 &ndash; $61,500</td>
-              <td class="px-4 py-3 num text-slate-300">$59,400</td>
-              <td class="px-4 py-3 num text-slate-300 text-xs">$62,400 / $62,994 / $63,200</td>
-              <td class="px-4 py-3 text-amber-400">&#9733;&#9733;&#9733;</td>
-              <td class="px-4 py-3 text-slate-400 text-xs">等待中</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-200 font-medium">ETOO</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$57,000 &ndash; $57,400</td>
-              <td class="px-4 py-3 num text-slate-300">$53,400</td>
-              <td class="px-4 py-3 num text-slate-300 text-xs">$59,000 / $60,422 / $62,200</td>
-              <td class="px-4 py-3 text-amber-400">&#9733;&#9733;&#9733;</td>
-              <td class="px-4 py-3 text-slate-400 text-xs">等待中</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Trade History -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-slate-200">历史交易</h2>
-
-      <div class="bg-emerald-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4 text-sm text-slate-300">
-        <span class="text-emerald-400 font-medium">框架成熟期表现 (6月16日起):</span>
-        7 笔 &middot; 4 胜 3 负 &middot; 胜率 57% &middot; <span class="text-emerald-400 font-medium num">+$2,702</span>
-        <br/>
-        <span class="text-slate-500">前 3 笔为初始校准阶段 (5月底至6月初),维度化交易框架尚未建立。</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead class="bg-slate-900 text-slate-400 text-left">
-            <tr>
-              <th class="px-4 py-3 font-medium">#</th>
-              <th class="px-4 py-3 font-medium">代号</th>
-              <th class="px-4 py-3 font-medium">方向</th>
-              <th class="px-4 py-3 font-medium num">入场 &rarr; 出场</th>
-              <th class="px-4 py-3 font-medium num">盈亏</th>
-              <th class="px-4 py-3 font-medium">退出原因</th>
-              <th class="px-4 py-3 font-medium">日期</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-800">
-            <tr class="opacity-50">
-              <td class="px-4 py-3 text-slate-500 num">1</td>
-              <td class="px-4 py-3 text-slate-400">Defense Long</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$75,566 &rarr; $74,785</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$40</td>
-              <td class="px-4 py-3 text-slate-400">中途失效</td>
-              <td class="px-4 py-3 text-slate-500">5月27日</td>
-            </tr>
-            <tr class="opacity-50">
-              <td class="px-4 py-3 text-slate-500 num">2</td>
-              <td class="px-4 py-3 text-slate-400">Failed Bounce</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$63,830 &rarr; $63,962</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$85</td>
-              <td class="px-4 py-3 text-slate-400">手动平仓</td>
-              <td class="px-4 py-3 text-slate-500">6月4日</td>
-            </tr>
-            <tr class="opacity-50">
-              <td class="px-4 py-3 text-slate-500 num">3</td>
-              <td class="px-4 py-3 text-slate-400">Reclaim 62k</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$62,804 &rarr; $62,313</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$53</td>
-              <td class="px-4 py-3 text-slate-400">触发止损</td>
-              <td class="px-4 py-3 text-slate-500">6月9日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">4</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">DROGBA</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$65,980 &rarr; $63,724</td>
-              <td class="px-4 py-3 num text-emerald-400 font-medium">+$2,827</td>
-              <td class="px-4 py-3 text-slate-400">全部止盈</td>
-              <td class="px-4 py-3 text-slate-500">6月20日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">5</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">BENZEMA</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$63,699 &rarr; $64,720</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$1,021</td>
-              <td class="px-4 py-3 text-slate-400">触发止损</td>
-              <td class="px-4 py-3 text-slate-500">6月22日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">6</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">DROGBA</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$60,445 &rarr; $58,749</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$1,695</td>
-              <td class="px-4 py-3 text-slate-400">触发止损</td>
-              <td class="px-4 py-3 text-slate-500">6月30日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">7</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">AGUERO</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$60,979 &rarr; $63,900</td>
-              <td class="px-4 py-3 num text-emerald-400 font-medium">+$1,556</td>
-              <td class="px-4 py-3 text-slate-400">全部止盈</td>
-              <td class="px-4 py-3 text-slate-500">7月5日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">8</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">MBAPPE</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$63,915 &rarr; $64,114</td>
-              <td class="px-4 py-3 num text-emerald-400 font-medium">+$401</td>
-              <td class="px-4 py-3 text-slate-400">TP1 止盈后触发止损</td>
-              <td class="px-4 py-3 text-slate-500">7月10日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">9</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">GRIEZMANN</td>
-              <td class="px-4 py-3"><span class="text-rose-400">空</span></td>
-              <td class="px-4 py-3 num text-slate-300">$63,080 &rarr; $64,362</td>
-              <td class="px-4 py-3 num text-rose-400 font-medium">&minus;$1,282</td>
-              <td class="px-4 py-3 text-slate-400">主动平仓 (论点失效)</td>
-              <td class="px-4 py-3 text-slate-500">7月10日</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-slate-500 num">10</td>
-              <td class="px-4 py-3 text-slate-200 font-medium">HENRY</td>
-              <td class="px-4 py-3"><span class="text-emerald-400">多</span></td>
-              <td class="px-4 py-3 num text-slate-300">$63,689 &rarr; $66,659</td>
-              <td class="px-4 py-3 num text-emerald-400 font-medium">+$1,916</td>
-              <td class="px-4 py-3 text-slate-400">全部止盈</td>
-              <td class="px-4 py-3 text-slate-500">7月21日</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="mt-16 pt-6 border-t border-slate-800 text-xs text-slate-500">
-      <p>本页数据为模拟盘,非真实资金交易。如需查看实时执行日志请联系作者。</p>
-      <p class="mt-1">&copy; 2026 量化策略仪表盘 &middot; Model 1 &middot; 数据截至 2026-07-23 UTC</p>
-    </footer>
-
+  <div id="app" class="max-w-5xl mx-auto px-6 py-12">
+    <p class="text-slate-400 text-center py-20">加载中...</p>
   </div>
+  <script>
+  fetch('model_1_data.json?' + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      document.getElementById('app').innerHTML =
+        '<p class="text-rose-400 text-center py-20">数据加载失败</p>';
+    });
+
+  function fmt(n) {
+    return Math.abs(n).toLocaleString('en-US', {maximumFractionDigits: 0});
+  }
+  function pnl(n) {
+    return n >= 0
+      ? '<span class="text-emerald-400 font-medium num">+$' + fmt(n) + '</span>'
+      : '<span class="text-rose-400 font-medium num">&minus;$' + fmt(n) + '</span>';
+  }
+  function stars(n) { return '&#9733;'.repeat(n); }
+
+  function render(d) {
+    var s = d.summary;
+    var statusMap = {
+      limit_placed: '<span class="text-xs px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">已挂单</span>',
+      filled: '<span class="text-xs px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">已成交</span>',
+      pending: '等待中',
+      conditions_met: '条件已满足'
+    };
+    var dirMap = {long: ['多', 'text-emerald-400'], short: ['空', 'text-rose-400']};
+
+    var planRows = d.active_plans.map(function(p) {
+      var di = dirMap[p.direction] || ['?',''];
+      return '<tr>'
+        + '<td class="px-4 py-3 text-slate-200 font-medium">' + p.codename + '</td>'
+        + '<td class="px-4 py-3"><span class="' + di[1] + '">' + di[0] + '</span></td>'
+        + '<td class="px-4 py-3 num text-slate-300">$' + fmt(p.entry_zone[0]) + ' &ndash; $' + fmt(p.entry_zone[1]) + '</td>'
+        + '<td class="px-4 py-3 num text-slate-300">$' + fmt(p.sl) + '</td>'
+        + '<td class="px-4 py-3 num text-slate-300 text-xs">' + p.tps.map(function(t){return '$'+fmt(t);}).join(' / ') + '</td>'
+        + '<td class="px-4 py-3 text-amber-400">' + stars(p.stars) + '</td>'
+        + '<td class="px-4 py-3 text-slate-400 text-xs">' + (statusMap[p.status] || p.status) + '</td>'
+        + '</tr>';
+    }).join('');
+
+    var tradeRows = d.trades.map(function(t) {
+      var di = dirMap[t.direction] || ['?',''];
+      var dim = t.calibration ? ' class="opacity-50"' : '';
+      var nameClass = t.calibration ? 'text-slate-400' : 'text-slate-200 font-medium';
+      return '<tr' + dim + '>'
+        + '<td class="px-4 py-3 text-slate-500 num">' + t.num + '</td>'
+        + '<td class="px-4 py-3 ' + nameClass + '">' + t.codename + '</td>'
+        + '<td class="px-4 py-3"><span class="' + di[1] + '">' + di[0] + '</span></td>'
+        + '<td class="px-4 py-3 num text-slate-300">$' + fmt(t.entry) + ' &rarr; $' + fmt(t.exit) + '</td>'
+        + '<td class="px-4 py-3 num">' + pnl(t.pnl) + '</td>'
+        + '<td class="px-4 py-3 text-slate-400">' + t.exit_reason + '</td>'
+        + '<td class="px-4 py-3 text-slate-500">' + t.date + '</td>'
+        + '</tr>';
+    }).join('');
+
+    document.getElementById('app').innerHTML = ''
+      + '<a href="../" class="text-sm text-slate-400 hover:text-slate-200">&larr; 返回策略总览</a>'
+
+      + '<header class="mt-6 mb-10">'
+      + '  <div class="flex items-baseline gap-3 flex-wrap">'
+      + '    <h1 class="text-4xl font-bold tracking-tight">Model 1</h1>'
+      + '    <span class="text-sm px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">模拟盘验证中</span>'
+      + '  </div>'
+      + '  <p class="text-slate-400 mt-2 text-sm">BTC 波段交易 &middot; 每笔 1 BTC 标准仓位 &middot; 最后更新 ' + d.updated_display + '</p>'
+      + '</header>'
+
+      + '<section class="mb-12">'
+      + '  <h2 class="text-xl font-semibold mb-4 text-slate-200">策略简介</h2>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-6 leading-relaxed text-slate-300">'
+      + '    <p class="mb-3"><span class="text-slate-100 font-medium">Model 1</span> 是一个深度学习驱动的 BTC 波段交易机器人,通过持续消化多种数据源进行自主学习:</p>'
+      + '    <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3 pl-2">'
+      + '      <li><span class="text-slate-100">技术分析视频</span> &mdash; 自动转录 YouTube 分析师视频,提取关键交易信号</li>'
+      + '      <li><span class="text-slate-100">交易所实时数据</span> &mdash; 价格、订单簿深度、持仓量、资金费率、清算热力图</li>'
+      + '      <li><span class="text-slate-100">图表形态识别</span> &mdash; 支撑/阻力位、假突破、散度信号、市场结构判定</li>'
+      + '      <li><span class="text-slate-100">历史交易数据库</span> &mdash; 保存每笔交易的决策依据、结果与退出原因,供系统复盘</li>'
+      + '    </ul>'
+      + '    <p>系统会回顾过去的交易记录,分析亏损原因,并持续优化决策模型。这是一个不断进化的过程 &mdash; 随着交易经验的积累,系统会变得越来越智能。目前以 <span class="font-medium text-slate-100">1 BTC</span> 标准仓位在 VPS 上 24/7 全自主模拟盘运行。</p>'
+      + '  </div>'
+      + '</section>'
+
+      + '<section class="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
+      + '    <div class="text-xs text-slate-400 mb-1">累计盈亏</div>'
+      + '    <div class="text-lg font-semibold text-emerald-400 num">+$' + fmt(s.cumulative_pnl) + '</div>'
+      + '    <div class="text-xs text-slate-500 mt-0.5">共 ' + s.total_trades + ' 笔交易</div>'
+      + '  </div>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
+      + '    <div class="text-xs text-slate-400 mb-1">框架成熟期</div>'
+      + '    <div class="text-lg font-semibold text-emerald-400 num">+$' + fmt(s.framework_pnl) + '</div>'
+      + '    <div class="text-xs text-slate-500 mt-0.5">' + s.framework_trades + ' 笔 &middot; 胜率 ' + s.framework_win_rate + '%</div>'
+      + '  </div>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
+      + '    <div class="text-xs text-slate-400 mb-1">最佳单笔</div>'
+      + '    <div class="text-lg font-semibold text-emerald-400 num">+$' + fmt(s.best_trade_pnl) + '</div>'
+      + '    <div class="text-xs text-slate-500 mt-0.5">' + s.best_trade_name + '</div>'
+      + '  </div>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
+      + '    <div class="text-xs text-slate-400 mb-1">当前候选计划</div>'
+      + '    <div class="text-lg font-semibold num">' + s.active_plans_count + ' 条</div>'
+      + '    <div class="text-xs text-slate-500 mt-0.5">' + s.armed_plans_count + ' 条已挂单</div>'
+      + '  </div>'
+      + '</section>'
+
+      + '<section class="mb-12">'
+      + '  <h2 class="text-xl font-semibold mb-4 text-slate-200">当前候选计划</h2>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-x-auto">'
+      + '    <table class="w-full text-sm">'
+      + '      <thead class="bg-slate-900 text-slate-400 text-left"><tr>'
+      + '        <th class="px-4 py-3 font-medium">代号</th>'
+      + '        <th class="px-4 py-3 font-medium">方向</th>'
+      + '        <th class="px-4 py-3 font-medium num">入场区间</th>'
+      + '        <th class="px-4 py-3 font-medium num">止损</th>'
+      + '        <th class="px-4 py-3 font-medium num">止盈目标</th>'
+      + '        <th class="px-4 py-3 font-medium">评级</th>'
+      + '        <th class="px-4 py-3 font-medium">状态</th>'
+      + '      </tr></thead>'
+      + '      <tbody class="divide-y divide-slate-800">' + planRows + '</tbody>'
+      + '    </table>'
+      + '  </div>'
+      + '</section>'
+
+      + '<section class="mb-12">'
+      + '  <h2 class="text-xl font-semibold mb-4 text-slate-200">历史交易</h2>'
+      + '  <div class="bg-emerald-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4 text-sm text-slate-300">'
+      + '    <span class="text-emerald-400 font-medium">框架成熟期表现 (6月16日起):</span> '
+      + s.framework_trades + ' 笔 &middot; ' + s.framework_wins + ' 胜 ' + s.framework_losses + ' 负 &middot; 胜率 ' + s.framework_win_rate + '% &middot; '
+      + '<span class="text-emerald-400 font-medium num">+$' + fmt(s.framework_pnl) + '</span>'
+      + '    <br/><span class="text-slate-500">前 3 笔为初始校准阶段 (5月底至6月初),维度化交易框架尚未建立。</span>'
+      + '  </div>'
+      + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-x-auto">'
+      + '    <table class="w-full text-sm">'
+      + '      <thead class="bg-slate-900 text-slate-400 text-left"><tr>'
+      + '        <th class="px-4 py-3 font-medium">#</th>'
+      + '        <th class="px-4 py-3 font-medium">代号</th>'
+      + '        <th class="px-4 py-3 font-medium">方向</th>'
+      + '        <th class="px-4 py-3 font-medium num">入场 &rarr; 出场</th>'
+      + '        <th class="px-4 py-3 font-medium num">盈亏</th>'
+      + '        <th class="px-4 py-3 font-medium">退出原因</th>'
+      + '        <th class="px-4 py-3 font-medium">日期</th>'
+      + '      </tr></thead>'
+      + '      <tbody class="divide-y divide-slate-800">' + tradeRows + '</tbody>'
+      + '    </table>'
+      + '  </div>'
+      + '</section>'
+
+      + '<footer class="mt-16 pt-6 border-t border-slate-800 text-xs text-slate-500">'
+      + '  <p>本页数据为模拟盘,非真实资金交易。如需查看实时执行日志请联系作者。</p>'
+      + '  <p class="mt-1">&copy; 2026 量化策略仪表盘 &middot; Model 1 &middot; 数据截至 ' + d.updated_display + '</p>'
+      + '</footer>';
+  }
+  </script>
 </body>
 </html>
