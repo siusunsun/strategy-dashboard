@@ -47,15 +47,34 @@ export const categories: Category[] = [
     blurb: '基于价格行为、形态识别与技术指标构建的系统化交易策略。',
     strategies: [
       {
-        id: 'alpha-ta',
-        nameZh: '三策略组合',
-        nameEn: 'Alpha TA 3-Strategy',
-        description: '多种技术分析策略的组合，涵盖技术指标、动量指标与图表形态。',
-        kpiLabel: '6 年累计回报',
-        kpiValue: '+51.3%',
+        id: 'hl-multistrat',
+        nameZh: '四策略组合',
+        nameEn: 'Hyperliquid Multi-Strategy',
+        description:
+          '四条低相关策略在同一账户上运行：趋势指标、动量交叉、通道突破（可做多做空）与杯柄形态，覆盖 30+ 币种。' +
+          '组合夏普 1.38 高于任何单一策略，因为各策略相关性接近于零。' +
+          '交易所挂载止损 + 组合层熔断，回撤预算 -8.5%。' +
+          '样本外 2022-2026，已扣除 Hyperliquid 手续费与真实资金费率。(更新: 2026-08-05)',
+        kpiLabel: '年化回报',
+        kpiValue: '+16.9%',
         subKpiLabel: '最大回撤',
-        subKpiValue: '-3.75%',
+        subKpiValue: '-8.5%',
         tone: 'good',
+        pdfEn: pdf('/pdfs/technical/hl_multistrat_EN.pdf'),
+        pdfZh: pdf('/pdfs/technical/hl_multistrat_ZH.pdf'),
+      },
+      {
+        id: 'alpha-ta-legacy',
+        nameZh: '三策略组合（已被取代）',
+        nameEn: 'Alpha TA 3-Strategy (superseded)',
+        description:
+          '早期三策略版本。2026-08 的因果性审计发现两处前视偏差，修正后回报显著下调，' +
+          '该版本已由上方四策略组合取代。报告保留供对照。',
+        kpiLabel: '状态',
+        kpiValue: '已取代',
+        subKpiLabel: '原报告',
+        subKpiValue: '2026-07',
+        tone: 'neutral',
         pdfEn: pdf('/pdfs/technical/3strat_backtest_report.pdf'),
         pdfZh: pdf('/pdfs/technical/3strat_backtest_report_ZH.pdf'),
       },
