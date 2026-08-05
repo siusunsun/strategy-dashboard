@@ -52,7 +52,7 @@ export const categories: Category[] = [
         nameEn: 'Hyperliquid Multi-Strategy',
         description:
           '四条低相关策略在同一账户上运行，综合多种技术指标。' +
-          '最大回撤 -14.2%，约为同期 BTC 买入持有（-82%）的六分之一。' +
+          '最大回撤 -14.2%。' +
           '交易所挂载止损 + 组合层熔断。' +
           '回测期 2017-2026（8.8 年），已扣除手续费与资金费率。(更新: 2026-08-05)',
         kpiLabel: '年化回报',
