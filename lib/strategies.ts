@@ -63,21 +63,6 @@ export const categories: Category[] = [
         pdfEn: pdf('/pdfs/technical/hl_multistrat_EN.pdf'),
         pdfZh: pdf('/pdfs/technical/hl_multistrat_ZH.pdf'),
       },
-      {
-        id: 'alpha-ta-legacy',
-        nameZh: '三策略组合（已被取代）',
-        nameEn: 'Alpha TA 3-Strategy (superseded)',
-        description:
-          '早期三策略版本。2026-08 的因果性审计发现两处前视偏差，修正后回报显著下调，' +
-          '该版本已由上方四策略组合取代。报告保留供对照。',
-        kpiLabel: '状态',
-        kpiValue: '已取代',
-        subKpiLabel: '原报告',
-        subKpiValue: '2026-07',
-        tone: 'neutral',
-        pdfEn: pdf('/pdfs/technical/3strat_backtest_report.pdf'),
-        pdfZh: pdf('/pdfs/technical/3strat_backtest_report_ZH.pdf'),
-      },
     ],
   },
   {
