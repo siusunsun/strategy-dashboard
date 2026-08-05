@@ -51,14 +51,15 @@ export const categories: Category[] = [
         nameZh: 'TA 综合策略',
         nameEn: 'TA Composite',
         description:
-          '四条低相关策略在同一账户上运行，综合多种技术指标。' +
-          '最大回撤 -14.2%。' +
+          '五条低相关策略在同一账户上运行，综合多种技术指标，' +
+          '新增 PCR 深度回撤做空策略提供熊市收益来源。' +
+          '最大回撤 -13.0%，最长回撤 221 天。' +
           '交易所挂载止损 + 组合层熔断。' +
           '回测期 2017-2026（8.8 年），已扣除手续费与资金费率。(更新: 2026-08-05)',
         kpiLabel: '年化回报',
-        kpiValue: '+21.5%',
+        kpiValue: '+26.6%',
         subKpiLabel: '夏普比率',
-        subKpiValue: '1.49',
+        subKpiValue: '1.68',
         tone: 'good',
         pdfEn: pdf('/pdfs/technical/ta_composite_EN.pdf'),
         pdfZh: pdf('/pdfs/technical/ta_composite_ZH.pdf'),
