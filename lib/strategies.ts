@@ -52,13 +52,13 @@ export const categories: Category[] = [
         nameEn: 'Hyperliquid Multi-Strategy',
         description:
           '四条低相关策略在同一账户上运行，综合多种技术指标。' +
-          '组合夏普 1.49，高于任何单一策略。' +
+          '最大回撤 -14.2%，约为同期 BTC 买入持有（-82%）的六分之一。' +
           '交易所挂载止损 + 组合层熔断。' +
-          '回测期 2017-2026（8.8 年），已扣除手续费与真实资金费率。(更新: 2026-08-05)',
+          '回测期 2017-2026（8.8 年），已扣除手续费与资金费率。(更新: 2026-08-05)',
         kpiLabel: '年化回报',
         kpiValue: '+21.5%',
-        subKpiLabel: '最大回撤',
-        subKpiValue: '-14.2%',
+        subKpiLabel: '夏普比率',
+        subKpiValue: '1.49',
         tone: 'good',
         pdfEn: pdf('/pdfs/technical/hl_multistrat_EN.pdf'),
         pdfZh: pdf('/pdfs/technical/hl_multistrat_ZH.pdf'),
