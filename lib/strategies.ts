@@ -51,14 +51,14 @@ export const categories: Category[] = [
         nameZh: '四策略组合',
         nameEn: 'Hyperliquid Multi-Strategy',
         description:
-          '四条低相关策略在同一账户上运行：趋势指标、动量交叉、通道突破（可做多做空）与杯柄形态，覆盖 30+ 币种。' +
-          '组合夏普 1.38 高于任何单一策略，因为各策略相关性接近于零。' +
-          '交易所挂载止损 + 组合层熔断，回撤预算 -8.5%。' +
-          '样本外 2022-2026，已扣除 Hyperliquid 手续费与真实资金费率。(更新: 2026-08-05)',
+          '四条低相关策略在同一账户上运行，综合多种技术指标。' +
+          '组合夏普 1.49，高于任何单一策略。' +
+          '交易所挂载止损 + 组合层熔断。' +
+          '回测期 2017-2026（8.8 年），已扣除手续费与真实资金费率。(更新: 2026-08-05)',
         kpiLabel: '年化回报',
-        kpiValue: '+16.9%',
+        kpiValue: '+21.5%',
         subKpiLabel: '最大回撤',
-        subKpiValue: '-8.5%',
+        subKpiValue: '-14.2%',
         tone: 'good',
         pdfEn: pdf('/pdfs/technical/hl_multistrat_EN.pdf'),
         pdfZh: pdf('/pdfs/technical/hl_multistrat_ZH.pdf'),
