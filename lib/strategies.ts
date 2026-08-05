@@ -47,9 +47,9 @@ export const categories: Category[] = [
     blurb: '基于价格行为、形态识别与技术指标构建的系统化交易策略。',
     strategies: [
       {
-        id: 'hl-multistrat',
-        nameZh: '四策略组合',
-        nameEn: 'Hyperliquid Multi-Strategy',
+        id: 'ta-composite',
+        nameZh: 'TA 综合策略',
+        nameEn: 'TA Composite',
         description:
           '四条低相关策略在同一账户上运行，综合多种技术指标。' +
           '最大回撤 -14.2%。' +
@@ -60,8 +60,8 @@ export const categories: Category[] = [
         subKpiLabel: '夏普比率',
         subKpiValue: '1.49',
         tone: 'good',
-        pdfEn: pdf('/pdfs/technical/hl_multistrat_EN.pdf'),
-        pdfZh: pdf('/pdfs/technical/hl_multistrat_ZH.pdf'),
+        pdfEn: pdf('/pdfs/technical/ta_composite_EN.pdf'),
+        pdfZh: pdf('/pdfs/technical/ta_composite_ZH.pdf'),
       },
     ],
   },
