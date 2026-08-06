@@ -1,75 +1,32 @@
 {
-  "updated": "2026-07-31T06:00:01.228314+00:00",
-  "updated_display": "2026-07-31",
+  "updated": "2026-08-06T06:20:12.473514+00:00",
+  "updated_display": "2026-08-06",
   "summary": {
-    "cumulative_pnl": 1878,
-    "total_trades": 16,
-    "wins": 6,
-    "losses": 10,
-    "framework_pnl": 2056,
-    "framework_trades": 13,
-    "framework_wins": 6,
-    "framework_losses": 7,
-    "framework_win_rate": 46,
+    "cumulative_pnl": 3278,
+    "total_trades": 20,
+    "wins": 9,
+    "losses": 11,
+    "framework_pnl": 3456,
+    "framework_trades": 17,
+    "framework_wins": 9,
+    "framework_losses": 8,
+    "framework_win_rate": 53,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
-    "active_plans_count": 4,
-    "armed_plans_count": 1
+    "active_plans_count": 3,
+    "armed_plans_count": 0,
+    "open_positions_count": 0,
+    "open_floating_pnl": 0,
+    "open_total_pnl": 0,
+    "current_price": 64726
   },
+  "open_positions": [],
   "active_plans": [
-    {
-      "codename": "CRISTIANO",
-      "direction": "long",
-      "entry_zone": [
-        63200,
-        63450
-      ],
-      "sl": 61000,
-      "tps": [
-        64493,
-        65166,
-        66077
-      ],
-      "stars": 4,
-      "status": "filled"
-    },
-    {
-      "codename": "ZIDANE",
-      "direction": "short",
-      "entry_zone": [
-        65295,
-        65495
-      ],
-      "sl": 67300,
-      "tps": [
-        64077,
-        63200,
-        62000
-      ],
-      "stars": 4,
-      "status": "pending"
-    },
-    {
-      "codename": "INZAGHI",
-      "direction": "short",
-      "entry_zone": [
-        66886,
-        67200
-      ],
-      "sl": 68200,
-      "tps": [
-        65800,
-        65000,
-        64300
-      ],
-      "stars": 4,
-      "status": "pending"
-    },
     {
       "codename": "BERGKAMP",
       "direction": "long",
       "entry_zone": [
-        61200,
+        60969,
         61500
       ],
       "sl": 59400,
@@ -78,7 +35,39 @@
         62994,
         63200
       ],
-      "stars": 3,
+      "stars": 4,
+      "status": "pending"
+    },
+    {
+      "codename": "AGUERO",
+      "direction": "long",
+      "entry_zone": [
+        64243,
+        64499
+      ],
+      "sl": 63000,
+      "tps": [
+        65256,
+        65495,
+        65722
+      ],
+      "stars": 4,
+      "status": "pending"
+    },
+    {
+      "codename": "SHEVCHENKO",
+      "direction": "short",
+      "entry_zone": [
+        65295,
+        65495
+      ],
+      "sl": 66200,
+      "tps": [
+        64400,
+        63100,
+        62228
+      ],
+      "stars": 4,
       "status": "pending"
     }
   ],
@@ -257,6 +246,50 @@
       "pnl": 383,
       "exit_reason": "主动平仓 (论点失效)",
       "date": "7月30日",
+      "calibration": false
+    },
+    {
+      "num": 17,
+      "codename": "CRISTIANO",
+      "direction": "long",
+      "entry": 63329,
+      "exit": 63900,
+      "pnl": 1268,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月31日",
+      "calibration": false
+    },
+    {
+      "num": 18,
+      "codename": "DROGBA",
+      "direction": "long",
+      "entry": 62590,
+      "exit": 62836,
+      "pnl": 246,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "8月1日",
+      "calibration": false
+    },
+    {
+      "num": 19,
+      "codename": "PIRLO",
+      "direction": "long",
+      "entry": 63888,
+      "exit": 63885,
+      "pnl": 190,
+      "exit_reason": "保本止损",
+      "date": "8月5日",
+      "calibration": false
+    },
+    {
+      "num": 20,
+      "codename": "NESTA",
+      "direction": "short",
+      "entry": 64243,
+      "exit": 64547,
+      "pnl": -304,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "8月6日",
       "calibration": false
     }
   ]
