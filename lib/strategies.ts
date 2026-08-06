@@ -130,9 +130,9 @@ export const categories: Category[] = [
         description:
           'AI 深度学习驱动的 BTC 波段交易系统。持续学习技术分析视频、交易所实时数据、图表形态及历史交易记录,自动生成并管理交易计划。系统记录每笔交易决策,复盘得失并持续优化——随着交易经验的积累不断进化。(更新: 2026-08-06)',
         kpiLabel: '累计盈亏 (模拟)',
-        kpiValue: '+$3,278',
+        kpiValue: '+$3,457',
         subKpiLabel: '交易记录',
-        subKpiValue: '20 笔',
+        subKpiValue: '17 笔',
         tone: 'good',
         pdfZh: pdf('/dl/model_1.html'),
         pdfZhLabel: '历史交易+交易计划',

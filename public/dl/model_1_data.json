@@ -1,16 +1,12 @@
 {
-  "updated": "2026-08-06T06:29:00.506084+00:00",
+  "updated": "2026-08-06T06:43:45.470875+00:00",
   "updated_display": "2026-08-06",
   "summary": {
-    "cumulative_pnl": 3278,
-    "total_trades": 20,
+    "cumulative_pnl": 3457,
+    "total_trades": 17,
     "wins": 9,
-    "losses": 11,
-    "framework_pnl": 3456,
-    "framework_trades": 17,
-    "framework_wins": 9,
-    "framework_losses": 8,
-    "framework_win_rate": 53,
+    "losses": 8,
+    "win_rate": 53,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
     "active_plans_count": 3,
@@ -18,7 +14,7 @@
     "open_positions_count": 0,
     "open_floating_pnl": 0,
     "open_total_pnl": 0,
-    "current_price": 64793
+    "current_price": 64791
   },
   "open_positions": [],
   "active_plans": [
@@ -74,223 +70,173 @@
   "trades": [
     {
       "num": 1,
-      "codename": "Defense Long",
-      "direction": "long",
-      "entry": 75566,
-      "exit": 74785,
-      "pnl": -40,
-      "exit_reason": "中途失效",
-      "date": "5月27日",
-      "calibration": true
-    },
-    {
-      "num": 2,
-      "codename": "Failed Bounce",
-      "direction": "short",
-      "entry": 63830,
-      "exit": 63962,
-      "pnl": -85,
-      "exit_reason": "手动平仓",
-      "date": "6月4日",
-      "calibration": true
-    },
-    {
-      "num": 3,
-      "codename": "Reclaim 62k",
-      "direction": "long",
-      "entry": 62804,
-      "exit": 62313,
-      "pnl": -53,
-      "exit_reason": "触发止损",
-      "date": "6月9日",
-      "calibration": true
-    },
-    {
-      "num": 4,
       "codename": "DROGBA",
       "direction": "short",
       "entry": 65980,
       "exit": 63724,
       "pnl": 2827,
       "exit_reason": "分批止盈",
-      "date": "6月20日",
-      "calibration": false
+      "date": "6月20日"
     },
     {
-      "num": 5,
+      "num": 2,
       "codename": "BENZEMA",
       "direction": "short",
       "entry": 63699,
       "exit": 64720,
       "pnl": -1021,
       "exit_reason": "触发止损",
-      "date": "6月22日",
-      "calibration": false
+      "date": "6月22日"
     },
     {
-      "num": 6,
+      "num": 3,
       "codename": "DROGBA",
       "direction": "long",
       "entry": 60444,
       "exit": 58749,
       "pnl": -1695,
       "exit_reason": "触发止损",
-      "date": "6月30日",
-      "calibration": false
+      "date": "6月30日"
     },
     {
-      "num": 7,
+      "num": 4,
       "codename": "AGUERO",
       "direction": "long",
       "entry": 60979,
       "exit": 63900,
       "pnl": 1556,
       "exit_reason": "全部止盈",
-      "date": "7月5日",
-      "calibration": false
+      "date": "7月5日"
     },
     {
-      "num": 8,
+      "num": 5,
       "codename": "MBAPPE",
       "direction": "short",
       "entry": 63915,
       "exit": 64114,
       "pnl": 401,
       "exit_reason": "TP1 止盈后触发止损",
-      "date": "7月10日",
-      "calibration": false
+      "date": "7月10日"
     },
     {
-      "num": 9,
+      "num": 6,
       "codename": "GRIEZMANN",
       "direction": "short",
       "entry": 63080,
       "exit": 64362,
       "pnl": -1282,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月10日",
-      "calibration": false
+      "date": "7月10日"
     },
     {
-      "num": 10,
+      "num": 7,
       "codename": "HENRY",
       "direction": "long",
       "entry": 63689,
       "exit": 66659,
       "pnl": 1916,
       "exit_reason": "全部止盈",
-      "date": "7月21日",
-      "calibration": false
+      "date": "7月21日"
     },
     {
-      "num": 11,
+      "num": 8,
       "codename": "RONALDINHO",
       "direction": "long",
       "entry": 65676,
       "exit": 64988,
       "pnl": -688,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月24日",
-      "calibration": false
+      "date": "7月24日"
     },
     {
-      "num": 12,
+      "num": 9,
       "codename": "FALCAO",
       "direction": "long",
       "entry": 64403,
       "exit": 64105,
       "pnl": -298,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月24日",
-      "calibration": false
+      "date": "7月24日"
     },
     {
-      "num": 13,
+      "num": 10,
       "codename": "BENZEMA",
       "direction": "long",
       "entry": 64046,
       "exit": 65328,
       "pnl": 1004,
       "exit_reason": "全部止盈",
-      "date": "7月26日",
-      "calibration": false
+      "date": "7月26日"
     },
     {
-      "num": 14,
+      "num": 11,
       "codename": "HIGUAIN",
       "direction": "short",
       "entry": 64712,
       "exit": 65466,
       "pnl": -755,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月26日",
-      "calibration": false
+      "date": "7月26日"
     },
     {
-      "num": 15,
+      "num": 12,
       "codename": "CRESPO",
       "direction": "short",
       "entry": 64632,
       "exit": 64924,
       "pnl": -292,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月27日",
-      "calibration": false
+      "date": "7月27日"
     },
     {
-      "num": 16,
+      "num": 13,
       "codename": "CAVANI",
       "direction": "short",
       "entry": 64166,
       "exit": 64007,
       "pnl": 383,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月30日",
-      "calibration": false
+      "date": "7月30日"
     },
     {
-      "num": 17,
+      "num": 14,
       "codename": "CRISTIANO",
       "direction": "long",
       "entry": 63329,
       "exit": 63900,
       "pnl": 1268,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "7月31日",
-      "calibration": false
+      "date": "7月31日"
     },
     {
-      "num": 18,
+      "num": 15,
       "codename": "DROGBA",
       "direction": "long",
       "entry": 62590,
       "exit": 62836,
       "pnl": 246,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "8月1日",
-      "calibration": false
+      "date": "8月1日"
     },
     {
-      "num": 19,
+      "num": 16,
       "codename": "PIRLO",
       "direction": "long",
       "entry": 63888,
       "exit": 63885,
       "pnl": 190,
       "exit_reason": "保本止损",
-      "date": "8月5日",
-      "calibration": false
+      "date": "8月5日"
     },
     {
-      "num": 20,
+      "num": 17,
       "codename": "NESTA",
       "direction": "short",
       "entry": 64243,
       "exit": 64547,
       "pnl": -304,
       "exit_reason": "主动平仓 (论点失效)",
-      "date": "8月6日",
-      "calibration": false
+      "date": "8月6日"
     }
   ]
 }
