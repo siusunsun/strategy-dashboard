@@ -116,11 +116,9 @@
 
     var tradeRows = d.trades.map(function(t) {
       var di = dirMap[t.direction] || ['?',''];
-      var dim = t.calibration ? ' class="opacity-50"' : '';
-      var nameClass = t.calibration ? 'text-slate-400' : 'text-slate-200 font-medium';
-      return '<tr' + dim + '>'
+      return '<tr>'
         + '<td class="px-4 py-3 text-slate-500 num">' + t.num + '</td>'
-        + '<td class="px-4 py-3 ' + nameClass + '">' + t.codename + '</td>'
+        + '<td class="px-4 py-3 text-slate-200 font-medium">' + t.codename + '</td>'
         + '<td class="px-4 py-3"><span class="' + di[1] + '">' + di[0] + '</span></td>'
         + '<td class="px-4 py-3 num text-slate-300">$' + fmt(t.entry) + ' &rarr; $' + fmt(t.exit) + '</td>'
         + '<td class="px-4 py-3 num">' + pnl(t.pnl) + '</td>'
@@ -161,9 +159,9 @@
       + '    <div class="text-xs text-slate-500 mt-0.5">共 ' + s.total_trades + ' 笔交易</div>'
       + '  </div>'
       + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
-      + '    <div class="text-xs text-slate-400 mb-1">框架成熟期</div>'
-      + '    <div class="text-lg font-semibold text-emerald-400 num">+$' + fmt(s.framework_pnl) + '</div>'
-      + '    <div class="text-xs text-slate-500 mt-0.5">' + s.framework_trades + ' 笔 &middot; 胜率 ' + s.framework_win_rate + '%</div>'
+      + '    <div class="text-xs text-slate-400 mb-1">胜率</div>'
+      + '    <div class="text-lg font-semibold num">' + Math.round(s.wins / s.total_trades * 100) + '%</div>'
+      + '    <div class="text-xs text-slate-500 mt-0.5">' + s.wins + ' 胜 ' + s.losses + ' 负</div>'
       + '  </div>'
       + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4">'
       + '    <div class="text-xs text-slate-400 mb-1">最佳单笔</div>'
@@ -200,12 +198,6 @@
 
       + '<section class="mb-12">'
       + '  <h2 class="text-xl font-semibold mb-4 text-slate-200">历史交易</h2>'
-      + '  <div class="bg-emerald-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4 text-sm text-slate-300">'
-      + '    <span class="text-emerald-400 font-medium">框架成熟期表现 (6月16日起):</span> '
-      + s.framework_trades + ' 笔 &middot; ' + s.framework_wins + ' 胜 ' + s.framework_losses + ' 负 &middot; 胜率 ' + s.framework_win_rate + '% &middot; '
-      + '<span class="text-emerald-400 font-medium num">+$' + fmt(s.framework_pnl) + '</span>'
-      + '    <br/><span class="text-slate-500">前 3 笔为初始校准阶段 (5月底至6月初),维度化交易框架尚未建立。</span>'
-      + '  </div>'
       + '  <div class="bg-slate-900/60 border border-slate-800 rounded-lg overflow-x-auto">'
       + '    <table class="w-full text-sm">'
       + '      <thead class="bg-slate-900 text-slate-400 text-left"><tr>'
