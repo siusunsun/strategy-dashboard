@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-06T06:43:45.470875+00:00",
-  "updated_display": "2026-08-06",
+  "updated": "2026-08-07T06:00:01.735109+00:00",
+  "updated_display": "2026-08-07",
   "summary": {
     "cumulative_pnl": 3457,
     "total_trades": 17,
@@ -9,14 +9,34 @@
     "win_rate": 53,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
-    "active_plans_count": 3,
+    "active_plans_count": 2,
     "armed_plans_count": 0,
-    "open_positions_count": 0,
-    "open_floating_pnl": 0,
-    "open_total_pnl": 0,
-    "current_price": 64791
+    "open_positions_count": 1,
+    "open_floating_pnl": -154,
+    "open_total_pnl": -154,
+    "current_price": 64326
   },
-  "open_positions": [],
+  "open_positions": [
+    {
+      "codename": "AGUERO",
+      "direction": "long",
+      "entry": 64481,
+      "current": 64326,
+      "floating_pnl": -154,
+      "realized_pnl": 0,
+      "total_pnl": -154,
+      "sl": 63000,
+      "sl_at_breakeven": false,
+      "tps": [
+        65256,
+        65495,
+        65722
+      ],
+      "tps_hit": [],
+      "remaining_pct": 100,
+      "stars": 4
+    }
+  ],
   "active_plans": [
     {
       "codename": "BERGKAMP",
@@ -35,26 +55,10 @@
       "status": "pending"
     },
     {
-      "codename": "AGUERO",
-      "direction": "long",
-      "entry_zone": [
-        64243,
-        64499
-      ],
-      "sl": 63000,
-      "tps": [
-        65256,
-        65495,
-        65722
-      ],
-      "stars": 4,
-      "status": "pending"
-    },
-    {
       "codename": "SHEVCHENKO",
       "direction": "short",
       "entry_zone": [
-        65295,
+        65200,
         65495
       ],
       "sl": 66200,
