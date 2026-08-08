@@ -20,7 +20,7 @@ export default function Home() {
             量化策略总览
           </h1>
           <p className="mt-3 text-base md:text-lg text-gray-400 max-w-2xl">
-            目前正在研究与运行的量化交易策略,涵盖技术分析、链上数据、期权与深度学习四大类。
+            目前正在研究与运行的量化交易策略,涵盖技术分析、链上数据、期权、收益与深度学习五大类。
             点击下方任意策略可查看完整的中英文报告。
           </p>
 

@@ -131,6 +131,32 @@ export const categories: Category[] = [
     ],
   },
   {
+    id: 'yield',
+    titleZh: '收益策略',
+    titleEn: 'Yield Strategies',
+    blurb: '通过资金利率市场获取稳定的美元收益。',
+    strategies: [
+      {
+        id: 'usd-yield',
+        nameZh: '美元收益策略',
+        nameEn: 'USD Yield Strategy',
+        description:
+          '自动化美元资金利率策略，动态配置于 2 天至 120 天不同期限报价之间，' +
+          '80% 权重倾向长期限以锁定较高利率。' +
+          '利率自适应机制在市场利率上升超过阈值时自动延长锁定期限。' +
+          '目标年化收益 10-15%。(更新: 2026-06-22)',
+        kpiLabel: '实际年化收益率',
+        kpiValue: '12.18%/年',
+        subKpiLabel: '累计收益',
+        subKpiValue: '$9,397',
+        tone: 'good',
+        isLive: true,
+        deployedLabel: '已投入资金',
+        deployedValue: '$209,958',
+      },
+    ],
+  },
+  {
     id: 'dl',
     titleZh: '深度学习策略',
     titleEn: 'Deep Learning Strategies',
