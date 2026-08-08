@@ -146,7 +146,7 @@ export const categories: Category[] = [
           '利率自适应机制在市场利率上升超过阈值时自动延长锁定期限。' +
           '目标年化收益 10-15%。(更新: 2026-06-22)',
         kpiLabel: '实际年化收益率',
-        kpiValue: '12.18%/年',
+        kpiValue: '13.59%/年',
         subKpiLabel: '累计收益',
         subKpiValue: '$9,397',
         tone: 'good',
