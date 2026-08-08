@@ -120,7 +120,7 @@ export const categories: Category[] = [
         subKpiValue: '+433%',
         tone: 'good',
         isLive: true,
-        deployedLabel: '账户权益',
+        deployedLabel: '已投入资金',
         deployedValue: '$183,768',
         pdfEn: pdf('/pdfs/options/btc_deribit_EN.pdf'),
         pdfZh: pdf('/pdfs/options/btc_deribit_ZH.pdf'),
