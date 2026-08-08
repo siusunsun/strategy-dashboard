@@ -23,6 +23,16 @@ export type Strategy = {
   /** Optional link to a live/real-time trading dashboard for this strategy
    *  (rendered as a 实时交易 button on the card). */
   liveDashboardUrl?: string;
+  /** If true, shows a green pulsing "实盘" (live) badge next to the strategy name. */
+  isLive?: boolean;
+  /** Optional third metric, e.g. capital deployed. */
+  deployedLabel?: string;
+  deployedValue?: string;
+  /** Optional link to a verified trade-history page (screenshots of real fills).
+   *  Rendered as a distinct button on the card. */
+  tradesUrl?: string;
+  tradesLabel?: string;
+  tradesIcon?: string;
   /** If true, render as a placeholder "coming soon" card. */
   comingSoon?: boolean;
 };
@@ -82,17 +92,14 @@ export const categories: Category[] = [
         subKpiLabel: '3 年累计',
         subKpiValue: '+125%',
         tone: 'good',
+        isLive: true,
+        deployedLabel: '已投入资金',
+        deployedValue: '$184,316',
         pdfEn: pdf('/pdfs/onchain/put_call_ratio_EN.pdf'),
         pdfZh: pdf('/pdfs/onchain/put_call_ratio_ZH.pdf'),
-      },
-      {
-        id: 'onchain-more',
-        nameZh: '更多策略即将上线',
-        nameEn: 'More to come',
-        description: '更多链上数据信号正在研究中。',
-        kpiLabel: '',
-        kpiValue: '',
-        comingSoon: true,
+        tradesUrl: pdf('/onchain/btc_lsr_trades.html'),
+        tradesLabel: '实盘成交记录',
+        tradesIcon: '📈',
       },
     ],
   },

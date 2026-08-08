@@ -25,6 +25,15 @@ export function StrategyCard({ s }: { s: Strategy }) {
       <div>
         <div className="flex items-baseline justify-between gap-2">
           <h3 className="text-xl font-semibold text-white">{s.nameZh}</h3>
+          {s.isLive ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-good/10 border border-good/40 px-2 py-0.5 text-xs text-good shrink-0">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-good opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-good"></span>
+              </span>
+              实盘
+            </span>
+          ) : null}
         </div>
         <div className="text-xs text-gray-500 mt-0.5">{s.nameEn}</div>
       </div>
@@ -44,6 +53,12 @@ export function StrategyCard({ s }: { s: Strategy }) {
           <div>
             <div className="text-xs text-gray-500">{s.subKpiLabel}</div>
             <div className="text-xl font-semibold text-gray-200">{s.subKpiValue}</div>
+          </div>
+        ) : null}
+        {s.deployedLabel ? (
+          <div>
+            <div className="text-xs text-gray-500">{s.deployedLabel}</div>
+            <div className="text-xl font-semibold text-gray-200">{s.deployedValue}</div>
           </div>
         ) : null}
       </div>
@@ -77,6 +92,16 @@ export function StrategyCard({ s }: { s: Strategy }) {
             className="inline-flex items-center gap-1.5 rounded-lg bg-good/10 border border-good/40 px-3 py-1.5 text-sm text-good hover:bg-good/20 transition-colors"
           >
             <span>📊</span> 实时交易
+          </a>
+        ) : null}
+        {s.tradesUrl ? (
+          <a
+            href={s.tradesUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500/10 border border-amber-500/40 px-3 py-1.5 text-sm text-amber-400 hover:bg-amber-500/20 transition-colors"
+          >
+            <span>{s.tradesIcon || '📈'}</span> {s.tradesLabel || '实盘成交记录'}
           </a>
         ) : null}
       </div>
