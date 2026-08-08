@@ -1,0 +1,65 @@
+{
+  "updated_at_utc": "2026-08-08T03:15:02.666748Z",
+  "currency": "BTC",
+  "equity_usd": 183768.15,
+  "equity_btc": 2.8316,
+  "open_position_count": 8,
+  "open_positions": [
+    {
+      "instrument": "BTC-14AUG26-70000-C",
+      "direction": "sell",
+      "size": -1.1,
+      "mark_price": 0.00028887,
+      "unrealized_pnl": 5.3242e-05
+    },
+    {
+      "instrument": "BTC-25DEC26-115000-C",
+      "direction": "sell",
+      "size": -1.0,
+      "mark_price": 0.00218712,
+      "unrealized_pnl": -0.000171491
+    },
+    {
+      "instrument": "BTC-25DEC26-30000-P",
+      "direction": "sell",
+      "size": -1.0,
+      "mark_price": 0.00364889,
+      "unrealized_pnl": 0.000434105
+    },
+    {
+      "instrument": "BTC-25JUN27-140000-C",
+      "direction": "sell",
+      "size": -1.0,
+      "mark_price": 0.00772946,
+      "unrealized_pnl": -4.9256e-05
+    },
+    {
+      "instrument": "BTC-25JUN27-30000-P",
+      "direction": "sell",
+      "size": -2.0,
+      "mark_price": 0.01272543,
+      "unrealized_pnl": 0.00083409
+    },
+    {
+      "instrument": "BTC-25SEP26-96000-C",
+      "direction": "sell",
+      "size": -1.0,
+      "mark_price": 0.00039077,
+      "unrealized_pnl": 2.205e-06
+    },
+    {
+      "instrument": "BTC-26MAR27-35000-P",
+      "direction": "sell",
+      "size": -2.0,
+      "mark_price": 0.01150967,
+      "unrealized_pnl": 0.00210849
+    },
+    {
+      "instrument": "BTC-28AUG26-70000-C",
+      "direction": "sell",
+      "size": -1.1,
+      "mark_price": 0.00459599,
+      "unrealized_pnl": -0.000207163
+    }
+  ]
+}

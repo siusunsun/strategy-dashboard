@@ -28,3 +28,9 @@ next-env.d.ts
 backups/
 scripts/preview/
 scripts/__pycache__/
+
+# secrets — must never live in this repo; backstop only, real storage is outside the working tree
+*.key
+secrets/
+.deribit*
+credentials.json
