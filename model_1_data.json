@@ -1,0 +1,307 @@
+{
+  "updated": "2026-08-22T19:48:01.429920+00:00",
+  "updated_display": "2026-08-23 03:48 HKT",
+  "updated_date": "2026-08-23",
+  "summary": {
+    "cumulative_pnl": 3829,
+    "total_trades": 23,
+    "wins": 13,
+    "losses": 10,
+    "win_rate": 57,
+    "best_trade_pnl": 2827,
+    "best_trade_name": "DROGBA 做空",
+    "active_plans_count": 2,
+    "armed_plans_count": 1,
+    "open_positions_count": 1,
+    "open_floating_pnl": -30,
+    "open_total_pnl": -30,
+    "current_price": 77451
+  },
+  "open_positions": [
+    {
+      "codename": "MBAPPE",
+      "direction": "short",
+      "entry": 77421,
+      "current": 77451,
+      "floating_pnl": -30,
+      "realized_pnl": 0,
+      "total_pnl": -30,
+      "sl": 79600,
+      "sl_at_breakeven": false,
+      "tps": [
+        75200,
+        74483,
+        72999
+      ],
+      "tps_hit": [],
+      "remaining_pct": 100,
+      "stars": 4
+    }
+  ],
+  "active_plans": [
+    {
+      "codename": "IBRAHIMOVIC",
+      "direction": "long",
+      "entry_zone": [
+        74483,
+        75200
+      ],
+      "sl": 72200,
+      "tps": [
+        78200,
+        81000,
+        84000
+      ],
+      "stars": 4,
+      "status": "limit_placed"
+    },
+    {
+      "codename": "KANE",
+      "direction": "short",
+      "entry_zone": [
+        79000,
+        79500
+      ],
+      "sl": 81500,
+      "tps": [
+        75000,
+        72999,
+        71251
+      ],
+      "stars": 4,
+      "status": "pending"
+    }
+  ],
+  "trades": [
+    {
+      "num": 1,
+      "codename": "DROGBA",
+      "direction": "short",
+      "entry": 65980,
+      "exit": 63724,
+      "pnl": 2827,
+      "exit_reason": "分批止盈",
+      "date": "6月20日"
+    },
+    {
+      "num": 2,
+      "codename": "BENZEMA",
+      "direction": "short",
+      "entry": 63699,
+      "exit": 64720,
+      "pnl": -1021,
+      "exit_reason": "触发止损",
+      "date": "6月22日"
+    },
+    {
+      "num": 3,
+      "codename": "DROGBA",
+      "direction": "long",
+      "entry": 60444,
+      "exit": 58749,
+      "pnl": -1695,
+      "exit_reason": "触发止损",
+      "date": "6月30日"
+    },
+    {
+      "num": 4,
+      "codename": "AGUERO",
+      "direction": "long",
+      "entry": 60979,
+      "exit": 63900,
+      "pnl": 1556,
+      "exit_reason": "全部止盈",
+      "date": "7月5日"
+    },
+    {
+      "num": 5,
+      "codename": "MBAPPE",
+      "direction": "short",
+      "entry": 63915,
+      "exit": 64114,
+      "pnl": 401,
+      "exit_reason": "TP1 止盈后触发止损",
+      "date": "7月10日"
+    },
+    {
+      "num": 6,
+      "codename": "GRIEZMANN",
+      "direction": "short",
+      "entry": 63080,
+      "exit": 64362,
+      "pnl": -1282,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月10日"
+    },
+    {
+      "num": 7,
+      "codename": "HENRY",
+      "direction": "long",
+      "entry": 63689,
+      "exit": 66659,
+      "pnl": 1916,
+      "exit_reason": "全部止盈",
+      "date": "7月21日"
+    },
+    {
+      "num": 8,
+      "codename": "RONALDINHO",
+      "direction": "long",
+      "entry": 65676,
+      "exit": 64988,
+      "pnl": -688,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月24日"
+    },
+    {
+      "num": 9,
+      "codename": "FALCAO",
+      "direction": "long",
+      "entry": 64403,
+      "exit": 64105,
+      "pnl": -298,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月24日"
+    },
+    {
+      "num": 10,
+      "codename": "BENZEMA",
+      "direction": "long",
+      "entry": 64046,
+      "exit": 65328,
+      "pnl": 1004,
+      "exit_reason": "全部止盈",
+      "date": "7月26日"
+    },
+    {
+      "num": 11,
+      "codename": "HIGUAIN",
+      "direction": "short",
+      "entry": 64712,
+      "exit": 65466,
+      "pnl": -755,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月26日"
+    },
+    {
+      "num": 12,
+      "codename": "CRESPO",
+      "direction": "short",
+      "entry": 64632,
+      "exit": 64924,
+      "pnl": -292,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月27日"
+    },
+    {
+      "num": 13,
+      "codename": "CAVANI",
+      "direction": "short",
+      "entry": 64166,
+      "exit": 64007,
+      "pnl": 383,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月30日"
+    },
+    {
+      "num": 14,
+      "codename": "CRISTIANO",
+      "direction": "long",
+      "entry": 63329,
+      "exit": 63900,
+      "pnl": 1268,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "7月31日"
+    },
+    {
+      "num": 15,
+      "codename": "DROGBA",
+      "direction": "long",
+      "entry": 62590,
+      "exit": 62836,
+      "pnl": 246,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "8月1日"
+    },
+    {
+      "num": 16,
+      "codename": "PIRLO",
+      "direction": "long",
+      "entry": 63888,
+      "exit": 63885,
+      "pnl": 190,
+      "exit_reason": "保本止损",
+      "date": "8月5日"
+    },
+    {
+      "num": 17,
+      "codename": "NESTA",
+      "direction": "short",
+      "entry": 64243,
+      "exit": 64547,
+      "pnl": -304,
+      "exit_reason": "主动平仓 (论点失效)",
+      "date": "8月6日"
+    },
+    {
+      "num": 18,
+      "codename": "AGUERO",
+      "direction": "long",
+      "entry": 64481,
+      "exit": 64475,
+      "pnl": 273,
+      "exit_reason": "保本止损",
+      "date": "8月10日"
+    },
+    {
+      "num": 19,
+      "codename": "ETOO",
+      "direction": "short",
+      "entry": 63051,
+      "exit": 63853,
+      "pnl": -802,
+      "exit_reason": "触发止损",
+      "date": "8月17日"
+    },
+    {
+      "num": 20,
+      "codename": "TREZEGUET",
+      "direction": "short",
+      "entry": 63920,
+      "exit": 63934,
+      "pnl": 397,
+      "exit_reason": "保本止损",
+      "date": "8月17日"
+    },
+    {
+      "num": 21,
+      "codename": "VILLA",
+      "direction": "long",
+      "entry": 63596,
+      "exit": 64773,
+      "pnl": 885,
+      "exit_reason": "全部止盈",
+      "date": "8月18日"
+    },
+    {
+      "num": 22,
+      "codename": "SHEVCHENKO",
+      "direction": "short",
+      "entry": 65209,
+      "exit": 65216,
+      "pnl": 899,
+      "exit_reason": "保本止损",
+      "date": "8月19日"
+    },
+    {
+      "num": 23,
+      "codename": "RAUL",
+      "direction": "short",
+      "entry": 65018,
+      "exit": 66297,
+      "pnl": -1279,
+      "exit_reason": "触发止损",
+      "date": "8月19日"
+    }
+  ]
+}
