@@ -180,7 +180,7 @@ export const categories: Category[] = [
         subKpiValue: '18 笔',
         tone: 'good',
         liveKey: 'model-1',
-        updatedDisplay: '2026-08-11 17:00 HKT',
+        updatedDisplay: '2026-08-14 14:00 HKT',
         pdfZh: pdf('/dl/model_1.html'),
         pdfZhLabel: '历史交易+交易计划',
         pdfZhIcon: '📊',

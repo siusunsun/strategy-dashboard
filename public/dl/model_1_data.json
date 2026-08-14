@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-11T09:00:01.582925+00:00",
-  "updated_display": "2026-08-11 17:00 HKT",
-  "updated_date": "2026-08-11",
+  "updated": "2026-08-14T06:00:01.288493+00:00",
+  "updated_display": "2026-08-14 14:00 HKT",
+  "updated_date": "2026-08-14",
   "summary": {
     "cumulative_pnl": 3731,
     "total_trades": 18,
@@ -12,20 +12,20 @@
     "best_trade_name": "DROGBA 做空",
     "active_plans_count": 1,
     "armed_plans_count": 0,
-    "open_positions_count": 2,
-    "open_floating_pnl": 531,
-    "open_total_pnl": 828,
-    "current_price": 64106
+    "open_positions_count": 3,
+    "open_floating_pnl": 879,
+    "open_total_pnl": 1780,
+    "current_price": 63358
   },
   "open_positions": [
     {
       "codename": "SHEVCHENKO",
       "direction": "short",
       "entry": 65209,
-      "current": 64106,
-      "floating_pnl": 717,
-      "realized_pnl": 297,
-      "total_pnl": 1014,
+      "current": 63358,
+      "floating_pnl": 555,
+      "realized_pnl": 901,
+      "total_pnl": 1456,
       "sl": 65209,
       "sl_at_breakeven": true,
       "tps": [
@@ -34,19 +34,20 @@
         62100
       ],
       "tps_hit": [
-        0
+        0,
+        1
       ],
-      "remaining_pct": 65,
+      "remaining_pct": 30,
       "stars": 4
     },
     {
       "codename": "TREZEGUET",
       "direction": "short",
       "entry": 63920,
-      "current": 64106,
-      "floating_pnl": -186,
+      "current": 63358,
+      "floating_pnl": 562,
       "realized_pnl": 0,
-      "total_pnl": -186,
+      "total_pnl": 562,
       "sl": 65200,
       "sl_at_breakeven": false,
       "tps": [
@@ -57,6 +58,25 @@
       "tps_hit": [],
       "remaining_pct": 100,
       "stars": 4
+    },
+    {
+      "codename": "VILLA",
+      "direction": "long",
+      "entry": 63596,
+      "current": 63358,
+      "floating_pnl": -238,
+      "realized_pnl": 0,
+      "total_pnl": -238,
+      "sl": 62150,
+      "sl_at_breakeven": false,
+      "tps": [
+        64020,
+        64914,
+        65100
+      ],
+      "tps_hit": [],
+      "remaining_pct": 100,
+      "stars": 3
     }
   ],
   "active_plans": [
