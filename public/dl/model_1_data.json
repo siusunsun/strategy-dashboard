@@ -1,31 +1,31 @@
 {
-  "updated": "2026-08-14T06:00:01.288493+00:00",
-  "updated_display": "2026-08-14 14:00 HKT",
-  "updated_date": "2026-08-14",
+  "updated": "2026-08-18T09:00:01.473479+00:00",
+  "updated_display": "2026-08-18 17:00 HKT",
+  "updated_date": "2026-08-18",
   "summary": {
-    "cumulative_pnl": 3731,
-    "total_trades": 18,
-    "wins": 10,
-    "losses": 8,
-    "win_rate": 56,
+    "cumulative_pnl": 3325,
+    "total_trades": 20,
+    "wins": 11,
+    "losses": 9,
+    "win_rate": 55,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
-    "active_plans_count": 1,
+    "active_plans_count": 2,
     "armed_plans_count": 0,
-    "open_positions_count": 3,
-    "open_floating_pnl": 879,
-    "open_total_pnl": 1780,
-    "current_price": 63358
+    "open_positions_count": 2,
+    "open_floating_pnl": 718,
+    "open_total_pnl": 1770,
+    "current_price": 64264
   },
   "open_positions": [
     {
       "codename": "SHEVCHENKO",
       "direction": "short",
       "entry": 65209,
-      "current": 63358,
-      "floating_pnl": 555,
+      "current": 64264,
+      "floating_pnl": 283,
       "realized_pnl": 901,
-      "total_pnl": 1456,
+      "total_pnl": 1184,
       "sl": 65209,
       "sl_at_breakeven": true,
       "tps": [
@@ -38,44 +38,27 @@
         1
       ],
       "remaining_pct": 30,
-      "stars": 4
-    },
-    {
-      "codename": "TREZEGUET",
-      "direction": "short",
-      "entry": 63920,
-      "current": 63358,
-      "floating_pnl": 562,
-      "realized_pnl": 0,
-      "total_pnl": 562,
-      "sl": 65200,
-      "sl_at_breakeven": false,
-      "tps": [
-        62800,
-        62100,
-        61000
-      ],
-      "tps_hit": [],
-      "remaining_pct": 100,
-      "stars": 4
+      "stars": 0
     },
     {
       "codename": "VILLA",
       "direction": "long",
       "entry": 63596,
-      "current": 63358,
-      "floating_pnl": -238,
-      "realized_pnl": 0,
-      "total_pnl": -238,
-      "sl": 62150,
-      "sl_at_breakeven": false,
+      "current": 64264,
+      "floating_pnl": 435,
+      "realized_pnl": 151,
+      "total_pnl": 586,
+      "sl": 63596,
+      "sl_at_breakeven": true,
       "tps": [
         64020,
-        64914,
-        65100
+        64600,
+        64750
       ],
-      "tps_hit": [],
-      "remaining_pct": 100,
+      "tps_hit": [
+        0
+      ],
+      "remaining_pct": 65,
       "stars": 3
     }
   ],
@@ -92,6 +75,22 @@
         62400,
         62994,
         63200
+      ],
+      "stars": 4,
+      "status": "pending"
+    },
+    {
+      "codename": "GRIEZMANN",
+      "direction": "short",
+      "entry_zone": [
+        64700,
+        64850
+      ],
+      "sl": 66100,
+      "tps": [
+        63800,
+        63000,
+        62200
       ],
       "stars": 4,
       "status": "pending"
@@ -277,6 +276,26 @@
       "pnl": 273,
       "exit_reason": "保本止损",
       "date": "8月10日"
+    },
+    {
+      "num": 19,
+      "codename": "ETOO",
+      "direction": "short",
+      "entry": 63051,
+      "exit": 63853,
+      "pnl": -802,
+      "exit_reason": "触发止损",
+      "date": "8月17日"
+    },
+    {
+      "num": 20,
+      "codename": "TREZEGUET",
+      "direction": "short",
+      "entry": 63920,
+      "exit": 63934,
+      "pnl": 397,
+      "exit_reason": "保本止损",
+      "date": "8月17日"
     }
   ]
 }
