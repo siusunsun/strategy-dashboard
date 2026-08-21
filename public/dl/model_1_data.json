@@ -1,101 +1,24 @@
 {
-  "updated": "2026-08-18T09:00:01.473479+00:00",
-  "updated_display": "2026-08-18 17:00 HKT",
-  "updated_date": "2026-08-18",
+  "updated": "2026-08-21T06:00:01.829891+00:00",
+  "updated_display": "2026-08-21 14:00 HKT",
+  "updated_date": "2026-08-21",
   "summary": {
-    "cumulative_pnl": 3325,
-    "total_trades": 20,
-    "wins": 11,
-    "losses": 9,
-    "win_rate": 55,
+    "cumulative_pnl": 3829,
+    "total_trades": 23,
+    "wins": 13,
+    "losses": 10,
+    "win_rate": 57,
     "best_trade_pnl": 2827,
     "best_trade_name": "DROGBA 做空",
-    "active_plans_count": 2,
+    "active_plans_count": 0,
     "armed_plans_count": 0,
-    "open_positions_count": 2,
-    "open_floating_pnl": 718,
-    "open_total_pnl": 1770,
-    "current_price": 64264
+    "open_positions_count": 0,
+    "open_floating_pnl": 0,
+    "open_total_pnl": 0,
+    "current_price": 75373
   },
-  "open_positions": [
-    {
-      "codename": "SHEVCHENKO",
-      "direction": "short",
-      "entry": 65209,
-      "current": 64264,
-      "floating_pnl": 283,
-      "realized_pnl": 901,
-      "total_pnl": 1184,
-      "sl": 65209,
-      "sl_at_breakeven": true,
-      "tps": [
-        64400,
-        63500,
-        62100
-      ],
-      "tps_hit": [
-        0,
-        1
-      ],
-      "remaining_pct": 30,
-      "stars": 0
-    },
-    {
-      "codename": "VILLA",
-      "direction": "long",
-      "entry": 63596,
-      "current": 64264,
-      "floating_pnl": 435,
-      "realized_pnl": 151,
-      "total_pnl": 586,
-      "sl": 63596,
-      "sl_at_breakeven": true,
-      "tps": [
-        64020,
-        64600,
-        64750
-      ],
-      "tps_hit": [
-        0
-      ],
-      "remaining_pct": 65,
-      "stars": 3
-    }
-  ],
-  "active_plans": [
-    {
-      "codename": "BERGKAMP",
-      "direction": "long",
-      "entry_zone": [
-        60969,
-        61500
-      ],
-      "sl": 59400,
-      "tps": [
-        62400,
-        62994,
-        63200
-      ],
-      "stars": 4,
-      "status": "pending"
-    },
-    {
-      "codename": "GRIEZMANN",
-      "direction": "short",
-      "entry_zone": [
-        64700,
-        64850
-      ],
-      "sl": 66100,
-      "tps": [
-        63800,
-        63000,
-        62200
-      ],
-      "stars": 4,
-      "status": "pending"
-    }
-  ],
+  "open_positions": [],
+  "active_plans": [],
   "trades": [
     {
       "num": 1,
@@ -296,6 +219,36 @@
       "pnl": 397,
       "exit_reason": "保本止损",
       "date": "8月17日"
+    },
+    {
+      "num": 21,
+      "codename": "VILLA",
+      "direction": "long",
+      "entry": 63596,
+      "exit": 64773,
+      "pnl": 885,
+      "exit_reason": "全部止盈",
+      "date": "8月18日"
+    },
+    {
+      "num": 22,
+      "codename": "SHEVCHENKO",
+      "direction": "short",
+      "entry": 65209,
+      "exit": 65216,
+      "pnl": 899,
+      "exit_reason": "保本止损",
+      "date": "8月19日"
+    },
+    {
+      "num": 23,
+      "codename": "RAUL",
+      "direction": "short",
+      "entry": 65018,
+      "exit": 66297,
+      "pnl": -1279,
+      "exit_reason": "触发止损",
+      "date": "8月19日"
     }
   ]
 }
